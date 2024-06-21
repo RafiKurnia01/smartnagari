@@ -44,7 +44,7 @@
      
       <div class="social-links d-none d-md-flex align-items-center">
       
-        <li><a href="login.html">Login Admin</a></li>
+        <li><a href="{{ route('loginadmin') }}">Login Admin</a></li>
        
       </div>
     </div>
@@ -62,12 +62,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" href="index.html">Profil Kota</a></li>
-          <li><a href="about.html">Visi & Misi</a></li>
-          <li><a href="services.html">Pelayanan</a></li>
-          <li><a href="portfolio.html">Data Produk</a></li>
-          <li><a href="team.html">Program Kerja Kota</a></li>
-          <li><a href="blog.html">Wisata</a></li>
+          <li><a class="active" href="{{ route('home') }}">Profil Kota</a></li>
+          <li><a href="{{ route('about') }}">Visi & Misi</a></li>
+          <li><a href="{{ route('services') }}">Pelayanan</a></li>
+          <li><a href="{{ route('portofolio') }}">Data Produk</a></li>
+          <li><a href="{{ route('team') }}">Program Kerja Kota</a></li>
+          <li><a href="{{ route('blog') }}">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Data Penduduk</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Stunting</a></li>
@@ -76,7 +76,7 @@
              
             </ul>
           </li>
-          <li><a href="contact.html">Kontak</a></li>
+          <li><a href="{{ route('contact') }}">Kontak</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -94,7 +94,7 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url(assets/img/slide/padang5.jpg)">
+          <div class="carousel-item active" style="background-image: url({{ asset('assets/img/slide/padang5.jpg') }})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Padang Smart City</span></h2>
@@ -105,7 +105,7 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/padang2.jpg)">
+          <div class="carousel-item" style="background-image: url({{ asset('assets/img/slide/padang2.jpg') }})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated fanimate__adeInDown"> Layanan Terdepan<span> di Ujung Jari Anda </span></h2>
@@ -116,7 +116,7 @@
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/padang3.jpg)">
+          <div class="carousel-item" style="background-image: url({{ asset('assets/img/slide/padang3.jpg') }})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown"> Layanan Unggul <span> Melayani dengan Hati </span></h2>
@@ -149,24 +149,41 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="icon-box">
-              <i class="bi bi-card-checklist"></i>
-              <h3><a href="walikota.html">Profil Singkat Wali Kota</a></h3>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <a href="{{ route('walikota') }}">
+                <i class="bi bi-card-checklist"></i>
+                <h3>Profil Singkat Wali Nagari</h3>
+                @foreach ($data as $datanya)
+                  @if ($datanya)
+                    <p>Nama : <b>{{ $datanya->nama }}</b> </p>
+                    <p>NIP : <b>{{ $datanya->nip }}</b> </p>
+                    <p>Alamat : <b>{{ $datanya->alamat }}</b> </p>
+                    <p>Riwayat Pendidikan : <b>{{ $datanya->riwayatpendidikan }}</b></p>
+                  @else
+                    <p>Data Walinagari Tidak Ditemukan</p>
+                  @endif
+              
+                @endforeach
+              </a>
             </div>
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="icon-box">
-              <i class="bi bi-bar-chart"></i>
-              <h3><a href="sejarah_kota.html">Sejarah Kota</a></h3>
-              <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
+              <a href="{{ route('sejarah_kota') }}">
+                <i class="bi bi-bar-chart"></i>
+                <h3>Sejarah Kota</h3>
+                <p>Padang adalah ibu kota Provinsi Sumatera Barat di Indonesia. Terletak di pantai barat pulau Sumatera, kota ini dikenal sebagai pusat budaya Minangkabau dan telah lama menjadi titik penting dalam sejarah perdagangan, politik, dan budaya di wilayah tersebut.</p>
+              </div>
+              </a>
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="icon-box">
-              <i class="bi bi-binoculars"></i>
-              <h3><a href="struktur_kota.html">Struktur Organisasi Pemerintah Kota</a></h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
+              <a href="{{ route('walikota') }}">
+
+                <i class="bi bi-binoculars"></i>
+                <h3><a href="struktur_kota.html">Struktur Organisasi Pemerintah Kota</a></h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              </div>
+              </a>
           </div>
         </div>
 
@@ -179,7 +196,7 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/about.jpg') }}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
@@ -324,16 +341,16 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
 

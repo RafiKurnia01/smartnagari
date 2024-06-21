@@ -66,20 +66,21 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" href="index.html">Profil Kota</a></li>
-          <li><a href="about.html">Visi & Misi</a></li>
-          <li><a href="services.html">Pelayanan</a></li>
-          <li><a href="portfolio.html">Data Produk</a></li>
-          <li><a href="team.html">Program Kerja Kota</a></li>
-          <li><a href="blog.html">Berita</a></li>
+          <li><a class="active" href="{{ route('home') }}">Profil Kota</a></li>
+          <li><a href="{{ route('about') }}">Visi & Misi</a></li>
+          <li><a href="{{ route('services') }}">Pelayanan</a></li>
+          <li><a href="{{ route('portofolio') }}">Data Produk</a></li>
+          <li><a href="{{ route('team') }}">Program Kerja Kota</a></li>
+          <li><a href="{{ route('blog') }}">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Data Penduduk</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Jumlah Penduduk Stunting</a></li>
-              <li><a href="#">Jumlah Penduduk Lansia</a></li>
-              <li><a href="#">Jumlah Penduduk Balita </a></li>
+              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Stunting</a></li>
+              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Lansia</a></li>
+              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Balita </a></li>
+             
             </ul>
           </li>
-          <li><a href="contact.html">Kontak</a></li>
+          <li><a href="{{ route('contact') }}">Kontak</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -112,20 +113,28 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>Sejarah Kota Padang</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
+            <h4><b>Pendahuluan</b></h4>
+            <p><p>Padang adalah ibu kota Provinsi Sumatera Barat di Indonesia. Terletak di pantai barat pulau Sumatera, kota ini dikenal sebagai pusat budaya Minangkabau dan telah lama menjadi titik penting dalam sejarah perdagangan, politik, dan budaya di wilayah tersebut</p></p>
+            <h4><b>Periode Awal dan Asal Usul</b></h4>
+            <p>Padang telah dihuni sejak zaman prasejarah oleh berbagai suku yang dikenal dengan adat dan budaya mereka yang unik. Sebelum kedatangan pengaruh asing, Padang merupakan daerah yang subur dan kaya akan hasil bumi seperti lada, emas, dan berbagai rempah.</p>
+            <h4><b>Zaman Kerajaan dan Awal Perdagangan</b></h4>
+            <p>Pada abad ke-14 hingga ke-16, wilayah Padang dan sekitarnya berada di bawah pengaruh Kerajaan Pagaruyung yang merupakan pusat dari budaya dan politik Minangkabau. Pada periode ini, Padang mulai menjadi pusat perdagangan penting di pesisir barat Sumatera. Pedagang dari India, Tiongkok, dan Timur Tengah datang untuk berdagang lada, emas, dan rempah-rempah lainnya.</p>
+            <h4><b>Kedatangan Portugis dan Belanda</b></h4>
+            <p>Pada abad ke-16, para pedagang Portugis adalah orang asing pertama yang tiba di Padang, namun pengaruh mereka tidak terlalu signifikan. Kemudian, pada abad ke-17, Belanda mulai menunjukkan minat yang besar di wilayah ini karena potensi ekonominya. Pada tahun 1663, Belanda mendirikan pos perdagangan di Padang untuk mengontrol perdagangan lada dan emas.</p>
+            <h4><b>Penjajahan Belanda dan Pertumbuhan Ekonomi</b></h4>
+            <p>Pada akhir abad ke-17 dan awal abad ke-18, Padang berkembang menjadi salah satu pusat perdagangan terbesar di pantai barat Sumatera di bawah kontrol VOC (Vereenigde Oostindische Compagnie) Belanda. Pelabuhan Padang menjadi titik strategis untuk pengiriman barang-barang seperti kopi, rempah-rempah, dan hasil bumi lainnya ke Eropa.</p>
+            <p>Belanda mendirikan berbagai infrastruktur, termasuk jalan, jembatan, dan bangunan pemerintahan, yang banyak di antaranya masih ada hingga kini. Namun, kolonialisme Belanda juga membawa penderitaan bagi masyarakat setempat melalui eksploitasi ekonomi dan penindasan budaya.</p>
+            <h4><b>Pengaruh Inggris dan Konflik Kolonial</b></h4>
+            <p>Pada tahun 1795, Padang sempat berada di bawah kendali Inggris setelah Belanda menyerah kepada Inggris selama Perang Napoleon. Namun, kendali Inggris hanya berlangsung hingga tahun 1819, ketika wilayah tersebut dikembalikan ke Belanda melalui Konvensi London.</p>
+            <p>Selama periode ini, ada banyak konflik antara Belanda dan penduduk setempat, termasuk Perang Padri (1821-1837), yang melibatkan kelompok-kelompok Minangkabau yang berusaha untuk menyingkirkan pengaruh asing dan memberlakukan hukum Islam yang lebih ketat.</p>
+            <h4><b>Masa Kebangkitan Nasional</b></h4>
+            <p>Pada awal abad ke-20, Padang menjadi pusat dari kebangkitan nasional Indonesia. Banyak tokoh penting dalam pergerakan kemerdekaan Indonesia berasal dari Padang dan Sumatera Barat, termasuk Mohammad Hatta, yang kemudian menjadi Wakil Presiden pertama Indonesia. Perlawanan terhadap penjajahan Belanda meningkat, dan Padang memainkan peran penting dalam perjuangan menuju kemerdekaan.</p>
+            <h4><b>Perang Dunia II dan Kemerdekaan</b></h4>
+            <p>Selama Perang Dunia II, Padang diduduki oleh Jepang pada tahun 1942. Pendudukan Jepang membawa perubahan besar dalam kehidupan sosial dan ekonomi kota, meskipun juga memicu lebih banyak perlawanan dari rakyat setempat.</p>
+            <p>Setelah kemerdekaan Indonesia pada tahun 1945, Padang menjadi ibu kota dari Provinsi Sumatera Tengah dan kemudian menjadi ibu kota Provinsi Sumatera Barat pada tahun 1957. Selama periode ini, kota Padang mengalami berbagai pembangunan infrastruktur dan peningkatan ekonomi.</p>
+            <h4><b>Masa Modern</b></h4>
+            <p>Pada paruh kedua abad ke-20 dan awal abad ke-21, Padang telah berkembang menjadi pusat ekonomi, pendidikan, dan kebudayaan di Sumatera Barat. Kota ini menjadi rumah bagi berbagai universitas dan institusi pendidikan, serta menjadi pusat perdagangan dan pariwisata yang penting di wilayah tersebut.</p>
+            
           </div>
         </div>
 

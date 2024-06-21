@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('walinagaris', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->string('nama');
             $table->string('nip');
             $table->string('alamat');
-            $table->date('tgllahir');
+            $table->string('tgllahir');
             $table->string('riwayatpendidikan');
-            $table->foreignId('id_gambar')->constrained('images')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('walinagaris');
+        Schema::dropIfExists('walikotas');
     }
 };
