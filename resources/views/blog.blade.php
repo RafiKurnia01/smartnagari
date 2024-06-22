@@ -108,11 +108,8 @@
                 </h2>
 
                 <div class="entry-content">
-                  <p>
-                    {{$d->content}}
-                  </p>
                   <div class="read-more">
-                    <a href="">Read More</a>
+                    <a href="{{ route('blog-single', $d->id) }}">Read More</a>
                   </div>
                 </div>
 

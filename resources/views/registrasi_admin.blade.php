@@ -3,10 +3,11 @@
   <!-- Learn More: https://formbold.com -->
   <div class="formbold-form-wrapper">
     
-    <img src="assets/img/logo padang.jpg" class="formbold-img">
+    <img src="{{ asset('assets/img/logo padang.jpg') }}" class="formbold-img">
 
 
-    <form action="https://formbold.com/s/FORM_ID" method="POST">
+    <form action="{{ route('registrasi_store') }}" method="POST" enctype="multipart/form-data">
+      @csrf
       <div class="formbold-form-title">
         <h2 class="">Silahkan Masukkan Data</h2>
         
@@ -15,22 +16,24 @@
       <div class="formbold-input-flex">
         <div>
           <label for="firstname" class="formbold-form-label">
-            Nama Depan
+            Username
           </label>
           <input
             type="text"
-            name="firstname"
-            id="firstname"
+            name="username"
+            id="username"
             class="formbold-form-input"
+            required
           />
         </div>
         <div>
-          <label for="lastname" class="formbold-form-label"> Nama Belakang </label>
+          <label for="password" class="formbold-form-label"> Password </label>
           <input
-            type="text"
-            name="lastname"
-            id="lastname"
+            type="password"
+            name="password"
+            id="password"
             class="formbold-form-input"
+            required
           />
         </div>
       </div>
@@ -43,28 +46,31 @@
             name="email"
             id="email"
             class="formbold-form-input"
+            required
           />
         </div>
         <div>
-          <label for="phone" class="formbold-form-label"> Nomor Telepon </label>
+          <label for="nik" class="formbold-form-label"> NIK </label>
           <input
             type="text"
-            name="phone"
-            id="phone"
+            name="nik"
+            id="nik"
             class="formbold-form-input"
+            required
           />
         </div>
       </div>
 
       <div class="formbold-mb-3">
-        <label for="address" class="formbold-form-label">
-          Alamat
+        <label for="namalengkap" class="formbold-form-label">
+          Nama Lengkap
         </label>
         <input
           type="text"
-          name="address"
-          id="address"
+          name="namalengkap"
+          id="namalengkap"
           class="formbold-form-input"
+          required
         />
       </div>
 
@@ -72,33 +78,51 @@
 
       <div class="formbold-input-flex">
         <div>
-          <label for="state" class="formbold-form-label"> Provinsi </label>
+          <label for="notelp" class="formbold-form-label"> Nomor Telephone </label>
           <input
             type="text"
-            name="state"
-            id="state"
+            name="notelp"
+            id="notelp"
             class="formbold-form-input"
+            required
           />
         </div>
+        
         <div>
-          <label for="country" class="formbold-form-label"> Negara </label>
+          <label for="alamat" class="formbold-form-label"> Alamat </label>
           <input
             type="text"
-            name="country"
-            id="country"
+            name="alamat"
+            id="alamat"
             class="formbold-form-input"
+            required
           />
         </div>
+
+        
+      </div>
+      <div class="formbold-mb-3">
+        <label for="pdf-upload" class="formbold-form-label">
+          Unggah Scan KTP (PDF)
+        </label>
+        <input
+          type="file"
+          name="ktp"
+          id="ktp"
+          class="formbold-form-input"
+          accept="pdf"
+        />
+        @error('ktp')
+          <small>{{ $message }}</small>
+        @enderror
       </div>
 
       <div class="formbold-input-flex">
         
         
       </div>
-
-     
-
-      <a href="login.html" class="formbold-btn">Register Now</a>
+      <button class="formbold-btn" type="submit">Register Now</button>
+      <a href="{{ route('login') }}">sudah punya akun? login disini</a>
 
     </form>
   </div>

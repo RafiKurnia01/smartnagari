@@ -44,7 +44,7 @@
      
       <div class="social-links d-none d-md-flex align-items-center">
       
-        <li><a href="{{ route('loginadmin') }}">Login Admin</a></li>
+        
        
       </div>
     </div>
@@ -70,13 +70,14 @@
           <li><a href="{{ route('blog') }}">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Data Penduduk</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Stunting</a></li>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Lansia</a></li>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Balita </a></li>
+              <li><a href="{{ route('report-detail-stunting') }}">Jumlah Penduduk Stunting</a></li>
+              <li><a href="{{ route('report-detail-lansia') }}">Jumlah Penduduk Lansia</a></li>
+              <li><a href="{{ route('report-detail-balita') }}">Jumlah Penduduk Balita </a></li>
              
             </ul>
           </li>
           <li><a href="{{ route('contact') }}">Kontak</a></li>
+          <li><a href="{{ route('login') }}">Login Admin</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -346,10 +347,8 @@
   <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
   <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
-
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
-
 </body>
 
 </html>
