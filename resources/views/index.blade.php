@@ -177,13 +177,12 @@
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="icon-box">
-              <a href="{{ route('walikota') }}">
-
+              <a href="{{ route('struktur_kota') }}">
                 <i class="bi bi-binoculars"></i>
-                <h3><a href="struktur_kota.html">Struktur Organisasi Pemerintah Kota</a></h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              </div>
+                <h3>Struktur Organisasi Pemerintah Kota</h3>
+                <p>Klik bagian ini untuk melihat struktur perangkat nagari  </p>
               </a>
+              </div>
           </div>
         </div>
 
@@ -199,21 +198,20 @@
             <img src="{{ asset('assets/img/about.jpg') }}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3><b>Visi & Misi Nagari</b></h3>
+            <h5><b>Visi</b></h5>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Menjadi desa yang sejahtera, berbudaya, dan berkelanjutan di tengah harmoni antara alam dan masyarakat.
             </p>
+            <h5><b>Misi</b></h5>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bi bi-check-circle"></i> Meningkatkan Kesejahteraan Masyarakat</li>
+              <li><i class="bi bi-check-circle"></i> Melestarikan Budaya Lokal</li>
+              <li><i class="bi bi-check-circle"></i> Konservasi Alam dan Lingkungan</li>
+              <li><i class="bi bi-check-circle"></i> Peningkatan Infrastruktur dan Pelayanan Publik</li>
+              <li><i class="bi bi-check-circle"></i> Pemberdayaan Masyarakat</li>
+              <li><i class="bi bi-check-circle"></i> Pengembangan Pariwisata Berkelanjutan</li>
             </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
           </div>
         </div>
 

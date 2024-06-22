@@ -10,22 +10,22 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Eterna
@@ -59,28 +59,28 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <h1><a href="index.html">Eterna</a></h1>
+        <h1><a href="{{ route('home') }}">Home</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" href="index.html">Profil Kota</a></li>
-          <li><a href="about.html">Visi & Misi</a></li>
-          <li><a href="services.html">Pelayanan</a></li>
-          <li><a href="portfolio.html">Data Produk</a></li>
-          <li><a href="team.html">Program Kerja Kota</a></li>
-          <li><a href="blog.html">Berita</a></li>
+          <li><a class="active" href="{{ route('home') }}">Profil Kota</a></li>
+          <li><a href="{{ route('about') }}">Visi & Misi</a></li>
+          <li><a href="{{ route('services') }}">Pelayanan</a></li>
+          <li><a href="{{ route('portofolio') }}">Data Produk</a></li>
+          <li><a href="{{ route('team') }}">Program Kerja Kota</a></li>
+          <li><a href="{{ route('blog') }}">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Data Penduduk</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Jumlah Penduduk Stunting</a></li>
-              <li><a href="#">Jumlah Penduduk Lansia</a></li>
-              <li><a href="#">Jumlah Penduduk Balita </a></li>
+              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Stunting</a></li>
+              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Lansia</a></li>
+              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Balita </a></li>
              
             </ul>
           </li>
-          <li><a href="contact.html">Kontak</a></li>
+          <li><a href="{{ route('contact') }}">Kontak</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -95,7 +95,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{ route('home') }}">Home</a></li>
           <li>Portfolio Details</li>
         </ol>
         <h2>Portfolio Details</h2>
@@ -105,52 +105,43 @@
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+      @if($dataproduk)
+        <div class="container">
 
-        <div class="row gy-4">
+          <div class="row gy-4">
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                  <div class="swiper-slide">
+                    <img src="{{ asset('assets/img/portfolio/'.$dataproduk->image) }}" alt="">
+                  </div>
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                </div>
-
+                <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-pagination"></div>
             </div>
-          </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h3>Detail Produk</h3>
+                <ul>
+                  <li><strong>Nama Produk</strong>: {{ $dataproduk->namaproduk }}</li>
+                  <li><strong>Produsen</strong>: {{ $dataproduk->namaumkm }}</li>
+                </ul>
+              </div>
+              <div class="portfolio-description">
+                <h2>Deskripsi Produk</h2>
+                <p>
+                  {{ $dataproduk->deskripsi }}
+                </p>
+              </div>
             </div>
-            <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-            </div>
+
           </div>
 
         </div>
-
-      </div>
+      @endif
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
