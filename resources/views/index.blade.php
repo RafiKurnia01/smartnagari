@@ -77,7 +77,7 @@
             </ul>
           </li>
           <li><a href="{{ route('contact') }}">Kontak</a></li>
-          <li><a href="{{ route('login') }}">Login Admin</a></li>
+          {{-- <li><a href="{{ route('login') }}">Login Admin</a></li> --}}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
