@@ -23,24 +23,32 @@ Route::get('/portfolio-details/{id}', [App\Http\Controllers\ProdukController::cl
 Route::get('/proker', [App\Http\Controllers\ProkerController::class, 'index'])->name('team');
 Route::get('/blog', [App\Http\Controllers\NewsController::class, 'index'])->name('blog');
 Route::get('/blog-single/{id}', [App\Http\Controllers\NewsController::class, 'detail'])->name('blog-single');
-Route::get('/contact', [App\Http\Controllers\MasukanController::class, 'index'])->name('contact');
-Route::post('/contact/store', [App\Http\Controllers\MasukanController::class, 'store'])->name('masukanstore');
+
 Route::get('/report-detail-balita', [App\Http\Controllers\PendudukController::class, 'balita'])->name('report-detail-balita');
 Route::get('/report-detail-lansia', [App\Http\Controllers\PendudukController::class, 'lansia'])->name('report-detail-lansia');
 Route::get('/report-detail-stunting', [App\Http\Controllers\PendudukController::class, 'stunting'])->name('report-detail-stunting');
-Route::get('/registrasi_admin', [App\Http\Controllers\ClientController::class, 'index'])->name('registrasi_admin');
-Route::post('/registrasi_admin/store', [App\Http\Controllers\ClientController::class, 'store'])->name('registrasi_store');
+Route::get('/registrasi', [App\Http\Controllers\ClientController::class, 'regis'])->name('registrasi');
+Route::post('/registrasi/store', [App\Http\Controllers\ClientController::class, 'store'])->name('registrasi_store');
 Route::get('/print-data-stunting', [App\Http\Controllers\PendudukController::class, 'printStunting'])->name('print-data-stunting');
 Route::get('/print-data-lansia', [App\Http\Controllers\PendudukController::class, 'printLansia'])->name('print-data-lansia');
 Route::get('/print-data-balita', [App\Http\Controllers\PendudukController::class, 'printBalita'])->name('print-data-balita');
+Route::get('/login', [App\Http\Controllers\ClientController::class, 'index'])->name('login');
+Route::post('/login/auth', [App\Http\Controllers\ClientController::class, 'authenticate'])->name('login_auth');
+
+Route::middleware('client')->group(function(){
+    Route::get('/services', function(){
+        return view('services');
+    })->name('services');
+    Route::get('/contact', [App\Http\Controllers\MasukanController::class, 'index'])->name('contact');
+    Route::post('/contact/store', [App\Http\Controllers\MasukanController::class, 'store'])->name('masukanstore');
+    Route::get('/logout', [App\Http\Controllers\ClientController::class, 'logout'])->name('logout');
+});
 
 Route::get('/about', function(){
     return view('about');
 })->name('about');
 
-Route::get('/services', function(){
-    return view('services');
-})->name('services');
+
 
 Route::get('/sejarah_kota', function(){
     return view('sejarah_kota');

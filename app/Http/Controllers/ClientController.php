@@ -6,31 +6,33 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Client;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
     public function index(){
-        return view('registrasi_admin');
+        return view('login');
+    }
+
+    public function regis(){
+        return view('registrasi');
     }
 
     public function authenticate(Request $request){
         $validatedData = Validator::make($request->all(), [
             'username' => 'required',
-            'password' => 'required',
+            'password' => 'required|min:8',
         ]);
 
-        if ($validatedData->fails()) {
+        if($validatedData->fails()){
             return redirect()->back()->withErrors($validatedData)->withInput();
         }
 
-        $client = Client::where('username', $request->username)->first();
-        if($client){
-            if(password_verify($request->password, $client->password)){
-                session(['client' => $client]);
-                return redirect()->route('index-admin');
-            }
+        if (Auth::guard('client')->attempt(['username' => $request->username, 'password' => $request->password])) {
+            return redirect()->intended(route('services'));
         }
-        return redirect()->back()->with('error', 'Username atau password salah');
+
+        return redirect()->back()->with('error', 'Username atau Password salah');
     }
 
     public function store(Request $request){
@@ -63,8 +65,15 @@ class ClientController extends Controller
         $client->notelp = $request->notelp;
         $client->alamat = $request->alamat;
         $client->ktp = $path;
-        $client->save();
+        $s = $client->save();
+        if(!$s){
+            return redirect()->back()->with('error', 'Data gagal disimpan');
+        }
+        return redirect()->route('registrasi')->with('success', 'Data berhasil disimpan');
+    }
 
-        return redirect()->route('registrasi_admin')->with('success', 'Data berhasil disimpan');
+    public function logout(){
+        Auth::guard('client')->logout();
+        return redirect()->route('home');
     }
 }

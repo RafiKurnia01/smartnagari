@@ -25,6 +25,18 @@
   </style>
 </head>
 <body class="hold-transition login-page">
+  @if(session()->has('sukses'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('sukses') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+            @endif
+            @if(session()->has('eror'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('eror') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+            @endif
 <div class="login-box">
   <!-- <div class="login-logo">
     <a href="../../index2.html"><b>LOGO</a>
@@ -34,9 +46,10 @@
     <div class="card-body login-card-body" style="border-radius: 9px;">
       <p class="login-box-msg">LOG IN</p>
 
-      <form action="../../domisili.html" method="post">
+      <form action="{{ route('login_auth') }}" method="post">
+        @csrf
         <div class="input-group mb-3" style="border-radius: 9px;" >
-          <input type="text" name="nik" style="border-color: #1384c1; background-color: aliceblue;" class="form-control" placeholder="NIK" pattern="\d{16}" title="Nomor NIK harus terdiri dari 16 digit angka" required>
+          <input type="text" name="username" id="username" style="border-color: #1384c1; background-color: aliceblue;" class="form-control" placeholder="Username" title="Nomor NIK harus terdiri dari 16 digit angka" required>
           <div class="input-group-append" >
             <div class="input-group-text" style="border-color: #1384c1; background-color: aliceblue;">
               <span class="fas fa-id-card" style="color: #1384c1;"></span>
@@ -44,7 +57,7 @@
           </div>
         </div>
         <div class="input-group mb-3" style="border-radius: 9px;">
-          <input type="text" name="nama" style="border-color: #1384c1; background-color: aliceblue;" class="form-control" placeholder="Nama" required>
+          <input type="password" name="password" id="password" style="border-color: #1384c1; background-color: aliceblue;" class="form-control" required>
           <div class="input-group-append">
             <div class="input-group-text" style="border-color: #1384c1; background-color: aliceblue;">
               <span class="fas fa-user" style="color: #1384c1;"></span>
@@ -65,7 +78,7 @@
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <div class="text-center">
-            <a href="{{ route('registrasi_admin') }}" class="belum-punya-akun">Belum Punya Akun?</a>
+            <a href="{{ route('registrasi') }}" class="belum-punya-akun">Belum Punya Akun?</a>
           </div>
           <style>
             .belum-punya-akun {
