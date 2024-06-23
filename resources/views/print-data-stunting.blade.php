@@ -9,12 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 4 -->
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min.css') }}">
 
     <!-- Google Font: Source Sans Pro -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
@@ -46,36 +44,25 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
+                                    <th>NIK</th>
                                     <th>Nama Anak</th>
                                     <th>Umur</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Nama Ibu</th>
-                                    <th>NIK Ibu</th>
                                     <th>Alamat</th>
-                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Syakila Anastasya</td>
-                                    <td>6 Tahun </td>
-                                    <td>Perempuan</td>
-                                    <td>Rahma Sinta  </td>
-                                    <td>210202020200202</td>
-                                    <td>Padang</td>
-                                    
-                                </tr>
-        
-                                <tr>
-                                    <td>Antonio Rifaldi</td>
-                                    <td>3 Tahun </td>
-                                    <td>Laki-Laki</td>
-                                    <td> Rani Julian </td>
-                                    <td>10202020200202</td>
-                                    <td>Pariaman</td>
-                                    
-                                </tr>
-        
+                                @foreach ($stunting as $s)
+                                    <tr>
+                                        <td>{{ $s->nik }}</td>
+                                        <td>{{ $s->nama }}</td>
+                                        <td>{{ $s->umur }} </td>
+                                        <td>{{ $s->jenis_kelamin }}</td>
+                                        <td>{{ $s->nama_ibu }}  </td>
+                                        <td>{{ $s->alamat }}</td>
+                                    </tr>
+                                @endforeach
         
                             </tbody>
         

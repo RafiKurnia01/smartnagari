@@ -7,25 +7,10 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('../../plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- daterange picker -->
-  <link rel="stylesheet" href="{{ asset('../../plugins/daterangepicker/daterangepicker.css') }}">
-  <!-- iCheck for checkboxes and radio inputs -->
-  <link rel="stylesheet" href="{{ asset('../../plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-  <!-- Bootstrap Color Picker -->
-  <link rel="stylesheet" href="{{ asset('../../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
-  <!-- Tempusdominus Bbootstrap 4 -->
-  <link rel="stylesheet" href="{{ asset('../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
-  <!-- Select2 -->
-  <link rel="stylesheet" href="{{ asset('../../plugins/select2/css/select2.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-  <!-- Bootstrap4 Duallistbox -->
-  <link rel="stylesheet" href="{{ asset('../../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('../../dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -153,36 +138,24 @@
             <thead style="border-top-right-radius: 10px; border-top-left-radius: 10px; background-color: #1384c1;">
               <tr  style="color: #fff;">
                 <th>Nama Anak</th>
-                <th>Tanggal Lahir</th>
+                <th>Usia</th>
                 <th>Jenis Kelamin</th>
                 <th>Nama Ayah</th>
                 <th>Nama Ibu</th>
                 <th>Alamat</th>
-              
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Syakila Anastasya</td>
-                <td>12 November 2002 </td>
-                <td>Perempuan</td>
-                <td>Muhammad Fikri </td>
-                <td>Rahma Sinta </td>
-                <td>Padang</td>
-                
-              </tr>
-             
-              <tr>
-                <td>Antonio Rifaldi</td>
-                <td>24 Februari 2007 </td>
-                <td>Laki-Laki</td>
-                <td>Khairul Ilham </td>
-                <td>Rani Julian</td>
-                <td>Nanggalo</td>
-               
-              </tr>
-             
-
+              @foreach($balita as $b)
+                <tr>
+                  <td>{{ $b->nama }}</td>
+                  <td>{{ $b->umur }}</td>
+                  <td>{{ $b->jenis_kelamin }}</td>
+                  <td>{{ $b->nama_ayah }}</td>
+                  <td>{{ $b->nama_ibu }}</td>
+                  <td>{{ $b->alamat }}</td>
+                </tr>
+              @endforeach
             </tbody>
 
           </table>
@@ -192,7 +165,7 @@
         <!-- /.card-body -->
           <div class="row my-4 container">
             <div class="col-lg-12 d-flex justify-content-end">
-              <button type="button" class="btn "  style=" background-color: #1384c1; border-radius: 9px; width:90px"> <a style="color: #fff;" href="./print-data-balita.html">Print</a> </button>
+              <button type="button" class="btn "  style=" background-color: #1384c1; border-radius: 9px; width:90px"> <a style="color: #fff;" href="{{ route('print-data-balita') }}">Print</a> </button>
             </div>
           </div>
           <!-- /.card-body -->
@@ -217,7 +190,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer d-flex justify-content-center">
-    <strong> &copy; 2023 <a href="https://argenesia.com/">FE</a></strong> 
+    <strong> &copy; 2023 <a href="">FE</a></strong> 
   </footer>
 
   <!-- Control Sidebar -->

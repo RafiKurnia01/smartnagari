@@ -30,7 +30,9 @@ Route::get('/report-detail-lansia', [App\Http\Controllers\PendudukController::cl
 Route::get('/report-detail-stunting', [App\Http\Controllers\PendudukController::class, 'stunting'])->name('report-detail-stunting');
 Route::get('/registrasi_admin', [App\Http\Controllers\ClientController::class, 'index'])->name('registrasi_admin');
 Route::post('/registrasi_admin/store', [App\Http\Controllers\ClientController::class, 'store'])->name('registrasi_store');
-
+Route::get('/print-data-stunting', [App\Http\Controllers\PendudukController::class, 'printStunting'])->name('print-data-stunting');
+Route::get('/print-data-lansia', [App\Http\Controllers\PendudukController::class, 'printLansia'])->name('print-data-lansia');
+Route::get('/print-data-balita', [App\Http\Controllers\PendudukController::class, 'printBalita'])->name('print-data-balita');
 
 Route::get('/about', function(){
     return view('about');

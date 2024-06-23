@@ -9,12 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 4 -->
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min.css') }}">
 
     <!-- Google Font: Source Sans Pro -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
@@ -55,28 +53,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Syakila Anastasya</td>
-                                    <td>0202020200202 </td>
-                                    <td>72 Tahun</td>
-                                    <td>Perempuan </td>
-                                    <td>Asma</td>
-                                    <td>Padang Kota</td>
-                                    
-                                </tr>
-        
-                                <tr>
-                                    <td>Antonio Rifaldi</td>
-                                    <td>1202020200202 </td>
-                                    <td>67 Tahun</td>
-                                    <td>Laki-Laki </td>
-                                    <td>Jantung</td>
-                                    <td>Siteba</td>
-                                   
-                                    
-                                </tr>
-        
-        
+                                @foreach ($lansia as $l)
+                                    <tr>
+                                        <td>{{ $l->nama }}</td>
+                                        <td> {{ $l->nik }}</td>
+                                        <td>{{ $l->umur }}</td>
+                                        <td>{{ $l->jenis_kelamin }}</td>
+                                        <td>{{ $l->riwayatpenyakit }}</td>
+                                        <td>{{ $l->alamat }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
         
                         </table>
