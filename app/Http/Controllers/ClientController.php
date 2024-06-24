@@ -29,7 +29,10 @@ class ClientController extends Controller
         }
 
         if (Auth::guard('client')->attempt(['username' => $request->username, 'password' => $request->password])) {
-            return redirect()->intended(route('services'));
+            $datauser = Client::where('username', $request->username)->first();
+            $data = $datauser->id;
+            // return redirect()->route('services', compact('data'));
+            return view('services', compact('data'));
         }
 
         return redirect()->back()->with('error', 'Username atau Password salah');

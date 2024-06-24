@@ -100,7 +100,10 @@
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4><a href="pages/examples/login-domisili.html">Surat Pindah Domisili</a></h4>
               <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-              <button type="button" class="btn btn-primary btn-sm">Status</button>
+              @if($data)
+              <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'domisili','id_client'=>$data]) }}">Status</a>
+              </button>
+              @endif
             </div>
           </div>
 
@@ -109,7 +112,8 @@
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="pages/examples/login-penghasilan.html">Surat Keterangan Penghasilan</a></h4>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-              <button type="button" class="btn btn-primary btn-sm">Status</button>
+              <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'penghasilan','id_client'=>$data]) }}">Status</a>
+              </button>
             </div>
           </div>
 
@@ -118,7 +122,8 @@
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4><a href="pages/examples/login-tanah.html">Surat Keterangan Kepemilikan Tanah</a></h4>
               <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-              <button type="button" class="btn btn-primary btn-sm">Status</button>
+              <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'tanah','id_client'=>$data]) }}">Status</a>
+              </button>
             </div>
           </div>
 
@@ -127,7 +132,8 @@
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4><a href="pages/examples/login-meninggal.html">Surat Keterangan Meninggal Dunia</a></h4>
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-              <button type="button" class="btn btn-primary btn-sm">Status</button>
+              <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'meninggal','id_client'=>$data]) }}">Status</a>
+              </button>
             </div>
           </div>
 
@@ -136,7 +142,8 @@
               <div class="icon"><i class="bx bx-slideshow"></i></div>
               <h4><a href="pages/examples/login-tidak-mampu.html">Surat Keterangan Tidak Mampu</a></h4>
               <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-              <button type="button" class="btn btn-primary btn-sm">Status</button>
+              <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'sktm','id_client'=>$data]) }}">Status</a>
+              </button>
             </div>
           </div>
 
@@ -145,7 +152,8 @@
               <div class="icon"><i class="bx bx-arch"></i></div>
               <h4><a href="pages/examples/login-menikah.html">Surat Keterangan Menikah</a></h4>
               <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-              <button type="button" class="btn btn-primary btn-sm">Status</button>
+              <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'nikah','id_client'=>$data]) }}">Status</a>
+              </button>
             </div>
           </div>
 

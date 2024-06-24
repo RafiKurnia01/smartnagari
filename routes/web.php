@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MasukanController;
+use App\Http\Controllers\PelayananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,12 +37,11 @@ Route::get('/login', [App\Http\Controllers\ClientController::class, 'index'])->n
 Route::post('/login/auth', [App\Http\Controllers\ClientController::class, 'authenticate'])->name('login_auth');
 
 Route::middleware('client')->group(function(){
-    Route::get('/services', function(){
-        return view('services');
-    })->name('services');
+    Route::get('/services', [App\Http\Controllers\PelayananController::class, 'index'])->name('services');
     Route::get('/contact', [App\Http\Controllers\MasukanController::class, 'index'])->name('contact');
     Route::post('/contact/store', [App\Http\Controllers\MasukanController::class, 'store'])->name('masukanstore');
     Route::get('/logout', [App\Http\Controllers\ClientController::class, 'logout'])->name('logout');
+    Route::get('/status/{jenis_surat}/{id_client}', [PelayananController::class, 'status'])->name('status');
 });
 
 Route::get('/about', function(){
