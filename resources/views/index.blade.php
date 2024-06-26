@@ -68,6 +68,7 @@
           <li><a href="{{ route('portofolio') }}">Data Produk</a></li>
           <li><a href="{{ route('team') }}">Program Kerja Kota</a></li>
           <li><a href="{{ route('blog') }}">Berita</a></li>
+          <li><a href="{{ route('wisata') }}">Wisata</a></li>
           <li class="dropdown"><a href="#"><span>Data Penduduk</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{ route('report-detail-stunting') }}">Jumlah Penduduk Stunting</a></li>

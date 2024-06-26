@@ -7,25 +7,25 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
   
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="{{ asset('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
   <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="{{ asset('assets/plugins/jqvmap/jqvmap.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min.css') }}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="{{ asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
-  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.css') }}">
+  <!-- Google Font: Source Sans Pro --> 
   <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -36,10 +36,10 @@
     }
     
     [class*=sidebar-dark-] {
-    background-color: #52b3e8;
+    background-color: #ff0022;
 }
 .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active{
-   background-color: #1384c1;
+   background-color: #f06108;
    color: #fff;
 }
 .small-box .icon>i {
@@ -56,16 +56,16 @@
     min-height: 80px;
     padding: 0.5rem;
     position: relative;
-    border-bottom: 3px solid #52b3e8;
+    border-bottom: 3px solid #ff0022;
 }
 .small-box{
-    border-bottom: 3px solid #52b3e8;
-  background-color: #52b3e8;
+    border-bottom: 3px solid #ff0022;
+  background-color: #ff0022;
         border-radius: 9px;
 }
 
 .small-box>.small-box-footer{
-  background-color: #1384c1;
+  background-color: #ff0022;
    border-bottom-left-radius: 9px;
    border-bottom-right-radius: 9px;
 }
@@ -80,7 +80,7 @@
     justify-content: center;
     text-align: center;
     width: 70px;
-    background-color: #1384c1;
+    background-color: #ff0022;
     /* border: 2px solid  #0081C9; */
 }
 .fas , .fa{
@@ -97,7 +97,7 @@
     bottom: 0;
     left: 0;
     margin-bottom: -6px;
-    background: #1384c1;
+    background: #ff0022;
 }
 .section-title::after {
     position: absolute;
@@ -106,7 +106,7 @@
     height: 4px;
     bottom: 0;
     left: 50px;
-    background: #1384c1;
+    background: #ff0022;
      margin-bottom: -6px;
 }
 .das{
@@ -127,7 +127,7 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars" style="color: #1384c1;"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars" style="color: #ff0022;"></i></a>
       </li>
     </ul>
 
@@ -136,17 +136,14 @@
   <!-- Messages Dropdown Menu -->
   
    
-      <a href="./pages/examples/login.html" class="dropdown-item" style="border-radius: 9px;" >
+      <a href="" class="dropdown-item" style="border-radius: 9px;" >
         <!-- Message Start -->
         <div class="media">
-          <span class="float-right text-sm "><i class="fas fa-star" style="color: #1384c1;"></i></span>
-          <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+          <span class="float-right text-sm"></span>
+        
           <div class="media-body">
-            <h3 class="dropdown-item-title">
-             Hallo
-             
-            </h3>
-            <p style="font-size: small;">Fatih</p>
+            <h3 class="dropdown-item-title">Hallo</h3>
+            <p style="font-size: small">@if($admin) {{ $admin }} @endif</p>
           </div>
         </div>
         <!-- Message End -->
@@ -165,9 +162,9 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light" style="color: #fff;">RECORD SYSTEM</span>
+      <span class="brand-text font-weight-light" style="color: #fff;">SMART NAGARI</span>
     </a>
 
     <!-- Sidebar -->
@@ -184,14 +181,13 @@
               <i class="nav-icon fas fa-home"></i>
               <p style="color: #fff;">
                 Dashboard
-               
               </p>
             </a>
            
           </li>
          
           <li class="nav-item has-treeview">
-            <a href="./pages/forms/transaksi.html" class="nav-link">
+            <a href="./pages/forms/data-produk.html" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p style="color: #fff;">
                 Data Produk
@@ -200,7 +196,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="./pages/forms/report-harian.html" class="nav-link">
+            <a href="./pages/forms/data-penduduk.html" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p style="color: #fff;">
                 Data Penduduk
@@ -212,13 +208,13 @@
             <a href="./pages/tables/settingan.html" class="nav-link">
               <i class="nav-icon fa fa-cog"></i>
               <p style="color: #fff;">
-                Pengajuan Pelayanan
+                User
               
               </p>
             </a>
           </li>
         <li class="nav-item has-treeview das" >
-          <a href="./pages/tables/settingan.html" class="nav-link">
+          <a href="{{ route('logout-admin') }}" class="nav-link">
             <i class="nav-icon fa fa-sign-out-alt"></i>
             <p style="color: #fff;">
               Log Out
@@ -251,7 +247,7 @@
           <div class="col-sm-6 mt-3">
             <ol class="breadcrumb float-sm-right">
               
-              <li class="breadcrumb-item"> <i class="nav-icon fas fa-home mr-2" style="color: #1384c1;"></i><a  style="font-weight: bold;" href="./index.html">Home</a></li>
+              <li class="breadcrumb-item"> <i class="nav-icon fas fa-home mr-2" style="color: #ff0022;"></i><a  style="font-weight: bold;" href="./index.html">Home</a></li>
               <li class="breadcrumb-item active">Dashboard </li>
             </ol>
           </div><!-- /.col -->
@@ -262,211 +258,252 @@
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-    <!-- Info boxes -->
-      <h6 class="font-weight-bold mt-4">PELAYANAN</h6>
+    <!-- PELAYANAN -->
+      <h6 class="font-weight-bold mt-4">Profile</h6>
     <div class="row">
     
-      <!-- SIM A -->
+      <!-- KEPENGURUSAN NAGARI -->
       <div class="col-12 col-sm-6 col-md-3" >
         <div class="info-box mb-3" >
-          <span class="info-box-icon  elevation-1" ><i class="fas fa-users" ></i></span>
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Surat Pindah</span>
-            <span class="info-box-text">Domisili</span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/kepengurusan.html" class="text-dark" target="_blank" rel="noopener noreferrer">Kepengurusan Nagari </a></span>
         </div>
         
-          
-          <!-- /.info-box-content -->
         </div>
-        <!-- /.info-box -->
-      </div>
-      <!-- SIM A -->
-      <!-- SIM A UMUM -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon  elevation-1"><i class="fas fa-users"></i></span>
-
-          <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Surat Keterangan</span>
-            <span class="info-box-text">Penghasilan</span>
-        </div>
-        
-          
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-      </div>
-      <!-- SIM A UMUM -->
-      <!-- SIM A UMUM -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon  elevation-1"><i class="fas fa-users"></i></span>
-
-          <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Surat Keterangan</span>
-            <span class="info-box-text">Tanah</span>
-        </div>
-        
-          
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-      </div>
-      <!-- SIM A UMUM -->
-      <!-- SIM A UMUM -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon elevation-1"><i class="fas fa-users"></i></span>
-
-          <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Surat keterangan</span>
-            <span class="info-box-text">kematian</span>
-        </div>
-        
-          
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-      </div>
-      <!-- SIM A UMUM -->
-      <!-- SIM A UMUM -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon elevation-1"><i class="fas fa-users"></i></span>
-
-          <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Surat Keterangan</span>
-            <span class="info-box-text">Tidak Mampu</span>
-        </div>
-        
-          
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-      </div>
-      <!-- SIM A UMUM -->
- 
-      <!-- SIM A UMUM -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon  elevation-1"><i class="fas fa-users"></i></span>
-
-          <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Surat keterangan</span>
-            <span class="info-box-text">Menikah</span>
-        </div>
-        
-          
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-      </div>
-      <!-- SIM A UMUM -->
- 
-      <!-- SIM A UMUM -->
-     
-      <!-- SIM A UMUM -->
- 
-     
-    </div>
-    <!-- /.row -->
-    <!-- Info boxes -->
-      <h6 class="font-weight-bold mt-4">Data Produk</h6>
-    <div class="row">
-    
-  
-      <!-- SIM Psikologi  -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon  elevation-1"><i class="fas fa-brain"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Produk 1</span>
-          
-            
-          </div>
-          
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-      </div>
-      <!-- Psikoogy -->
-      <!-- SIM A UMUM -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon  elevation-1"><i class="fa fa-stethoscope"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Kesehatan</span>
       
-            
-          </div>
-          
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
       </div>
-      <!-- SIM A UMUM -->
-  
+      <!-- ENDKEPENGURUSAN NAGARI-->
+
+      <!-- WISATA -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
+
+          <div class="info-box-content" style="display: flex; flex-direction: column;">
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminwisata') }}" class="text-dark" rel="noopener noreferrer">Wisata </a></span>
+        </div>
+        
+        </div>
+      
+      </div>
+      <!-- END WISATA-->
+
+      <!-- PROGRAM KERJA -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
+
+          <div class="info-box-content" style="display: flex; flex-direction: column;">
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/wisata.html" class="text-dark" target="_blank" rel="noopener noreferrer">Program Kerja </a></span>
+        </div>
+        
+        </div>
+      
+      </div>
+      <!-- END PROGRAM KERJA -->
+
+      <!-- PRODUK -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
+
+          <div class="info-box-content" style="display: flex; flex-direction: column;">
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/data-produk.html" class="text-dark" target="_blank" rel="noopener noreferrer">Produk  </a></span>
+        </div>
+        
+        </div>
+      
+      </div>
+      <!-- END PRODUK-->
+
+      <!-- SEJARAH KOTA -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
+
+          <div class="info-box-content" style="display: flex; flex-direction: column;">
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/sejarah-kota.html" class="text-dark" target="_blank" rel="noopener noreferrer">Sejarah Kota</a></span>
+        </div>
+        
+        </div>
+      
+      </div>
+      <!-- END SEJARAH KOTA-->
+
+      <!-- VISI MISI-->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
+
+          <div class="info-box-content" style="display: flex; flex-direction: column;">
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/visi-misi.html" class="text-dark" target="_blank" rel="noopener noreferrer">Visi Misi</a></span>
+        </div>
+        
+        </div>
+      
+      </div>
+      <!-- END VISI MISI-->
+     
  
      
     </div>
-     <!-- /.row -->
-    <!-- Info boxes -->
-    <h6 class="font-weight-bold mt-4">Data Penduduk</h6>
+
+    <!-- END PELAYANAN -->
+
+    <!-- PELAYANAN -->
+      <h6 class="font-weight-bold mt-4">Pelayanan Surat</h6>
     <div class="row">
     
-  
-      <!-- SIM Psikologi  -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon  elevation-1"><i class="fas fa-brain"></i></span>
+      <!-- MENINGGAL DUNIA -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Jumlah Penduduk</span>
-            <span class="info-box-text">Stunting</span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/surat-meninggal.html" class="text-dark" target="_blank" rel="noopener noreferrer">Surat Meninggal <br>Dunia </a></span>
         </div>
-          
-          <!-- /.info-box-content -->
+        
         </div>
-        <!-- /.info-box -->
+      
       </div>
-      <!-- Psikoogy -->
-      <!-- SIM A UMUM -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon  elevation-1"><i class="fa fa-stethoscope"></i></span>
+      <!-- END MENINGGAL DUNIA-->
+
+      <!-- MENINGGAL DUNIA -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Jumlah Penduduk</span>
-            <span class="info-box-text">Lansia</span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/surat-nikah.html" class="text-dark" target="_blank" rel="noopener noreferrer">Surat Nikah </a></span>
         </div>
-          
-          <!-- /.info-box-content -->
+        
         </div>
-        <!-- /.info-box -->
+      
       </div>
+      <!-- END MENINGGAL DUNIA-->
 
-
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-          <span class="info-box-icon  elevation-1"><i class="fa fa-stethoscope"></i></span>
+      <!-- DOMISILI -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;">Jumlah Penduduk</span>
-            <span class="info-box-text">balita</span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/surat-domisili.html" class="text-dark" target="_blank" rel="noopener noreferrer">Surat Keterangan <br>Domisili </a></span>
         </div>
-          
-          <!-- /.info-box-content -->
+        
         </div>
-        <!-- /.info-box -->
+      
       </div>
-      <!-- SIM A UMUM -->
-  
+      <!-- END DOMISILI-->
+
+      <!-- SURAT TIDAK MAMPU -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
+
+          <div class="info-box-content" style="display: flex; flex-direction: column;">
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/surat-keterangan-tidak-mampu.html" class="text-dark" target="_blank" rel="noopener noreferrer">Surat Keterangan <br>Tidak Mampu </a></span>
+        </div>
+        
+        </div>
+      
+      </div>
+      <!-- END SURAT TIDAK MAMPU -->
+
+      <!-- SURAT PENGHASILAN -->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
+
+          <div class="info-box-content" style="display: flex; flex-direction: column;">
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/surat-penghasilan.html" class="text-dark" target="_blank" rel="noopener noreferrer">Surat Penghasilan</a></span>
+        </div>
+        
+        </div>
+      
+      </div>
+      <!-- END SURAT PENGHASILAN -->
+
+      <!-- PENGADUAN-->
+      <div class="col-12 col-sm-6 col-md-3" >
+        <div class="info-box mb-3" >
+          <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
+
+          <div class="info-box-content" style="display: flex; flex-direction: column;">
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/pengaduan.html" class="text-dark" target="_blank" rel="noopener noreferrer">Pengaduan</a></span>
+        </div>
+        
+        </div>
+      
+      </div>
+      <!-- END PENGADUAN-->
+     
  
      
     </div>
+
+    <!-- END PELAYANAN -->
+ 
+
+    <!-- DATA PENDUDUK -->
+
+   
+      <h6 class="font-weight-bold mt-4">Data Penduduk</h6>
+      <div class="row">
+      
+      
+        <!-- STUNTING  -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon  elevation-1"><i class="fas fa-stethoscope"></i></span>
+      
+            <div class="info-box-content" style="display: flex; flex-direction: column;">
+              <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/lansia.html" class="text-dark"
+                  target="_blank" rel="noopener noreferrer">Jumlah Penduduk <br> Stunting</a> </span>
+            </div>
+          </div>
+        </div>
+      
+        <!-- LANSIA -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon  elevation-1"><i class="fa fa-users"></i></span>
+      
+            <div class="info-box-content" style="display: flex; flex-direction: column;">
+              <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/stunting.html"
+                  class="text-dark" target="_blank" rel="noopener noreferrer">Jumlah Penduduk <br> Lansia</a> </span>
+            </div>
+      
+      
+          </div>
+      
+        </div>
+      
+        <!-- BALITA -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon  elevation-1"><i class="fa fa-baby"></i></span>
+      
+            <div class="info-box-content" style="display: flex; flex-direction: column;">
+              <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/balita.html" class="text-dark"
+                  target="_blank" rel="noopener noreferrer">Jumlah Penduduk <br> Balita</a> </span>
+            </div>
+      
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+      
+      
+      
+      
+      </div>
+   
+
+    <!-- END DATA PENDUDUK -->
+   
 
   </div><!--/. container-fluid -->
 </section>

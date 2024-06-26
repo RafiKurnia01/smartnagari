@@ -4,145 +4,223 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Surat Keterangan Menikah</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-
-      h1 {
-        text-align: center;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border: 1px solid #ddd;
-      }
-
-      input[type="text"],
-      input[type="number"],
-      select,
-      textarea {
-        width: 100%;
-        padding: 6px;
-        margin-top: 8px;
-        border: 1px solid #ddd;
-      }
-
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        cursor: pointer;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
+
   <body>
-    <h1>Formulir Surat Keterangan Menikah</h1>
+    <div class="container">
+      <h1 style="padding: 50px; text-align: center;" class="col-12">Formulir Surat Keterangan Menikah</h1>
+      <div class="col-12" style="box-shadow: 0 4px 6px rgb(0, 0, 0); padding: 20px;">
+      <form action="{{ route('nikahstore') }}" method="POST">
+        @csrf
+        <div class="row">
+          <div class="col-md-6">
+            <input type="hidden" name="id_client" id="client" value="@if($data) {{ $data }} @endif">
+            <div class="form-group">
+              <label for="tempat_menikah">Tempat Menikah</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tempatmenikah"
+                name="tempatmenikah"
+                required
+              />
+            </div>
+            <h3>Data Diri</h3>
+            <div class="form-group">
+              <label for="nama_suami">Nama Lengkap</label>
+              <input
+                type="text"
+                class="form-control"
+                id="namalengkap"
+                name="namalengkap"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="nik">NIK</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nik"
+                name="nik"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tempat_lahir">Tempat Lahir</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tempat_lahir"
+                name="tempat_lahir"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tanggal_lahir">Tanggal Lahir</label>
+              <input
+                type="date"
+                class="form-control"
+                id="tanggal_lahir"
+                name="tanggal_lahir"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="jenis_kelamin">Jenis Kelamin</label>
+              <select
+                class="form-control"
+                id="jenis_kelamin"
+                name="jenis_kelamin"
+                required
+              >
+                <option value="">Pilih Jenis Kelamin</option>
+                <option value="Laki-Laki">Laki-Laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <textarea
+                class="form-control"
+                id="alamat"
+                name="alamat"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="agama">Agama</label>
+              <input
+                type="text"
+                class="form-control"
+                id="agama"
+                name="agama"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="pekerjaan">Pekerjaan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="pekerjaan"
+                name="pekerjaan"
+                required
+              />
+            </div>
+          </div>
 
-    <form action="#">
-      <table>
-        <tr>
-          <th colspan="2">Data Suami</th>
-        </tr>
-        <tr>
-          <th>Nama Lengkap Suami</th>
-          <td><input type="text" name="nama_suami" required /></td>
-        </tr>
-        <tr>
-          <th>NIK Suami</th>
-          <td><input type="text" name="nik_suami" required /></td>
-        </tr>
-        <tr>
-          <th>Tempat Lahir Suami</th>
-          <td><input type="text" name="tempat_lahir_suami" required /></td>
-        </tr>
-        <tr>
-          <th>Tanggal Lahir Suami</th>
-          <td><input type="date" name="tanggal_lahir_suami" required /></td>
-        </tr>
-        <tr>
-          <th>Jenis Kelamin Suami</th>
-          <td>
-            <select name="jenis_kelamin_suami" required>
-              <option value="">Pilih Jenis Kelamin</option>
-              <option value="L">Laki-Laki</option>
-              <option value="P">Perempuan</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <th>Alamat Suami</th>
-          <td><textarea name="alamat_suami" rows="3" required></textarea></td>
-        </tr>
-        <tr>
-          <th>Agama Suami</th>
-          <td><input type="text" name="agama_suami" required /></td>
-        </tr>
-        <tr>
-          <th>Pekerjaan Suami</th>
-          <td><input type="text" name="pekerjaan_suami" required /></td>
-        </tr>
-        <!-- Memberikan ruang antara data suami dan istri -->
-        <tr>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <th colspan="2">Data Istri</th>
-        </tr>
-        <tr>
-          <th>Nama Lengkap Istri</th>
-          <td><input type="text" name="nama_istri" required /></td>
-        </tr>
-        <tr>
-          <th>NIK Istri</th>
-          <td><input type="text" name="nik_istri" required /></td>
-        </tr>
-        <tr>
-          <th>Tempat Lahir Istri</th>
-          <td><input type="text" name="tempat_lahir_istri" required /></td>
-        </tr>
-        <tr>
-          <th>Tanggal Lahir Istri</th>
-          <td><input type="date" name="tanggal_lahir_istri" required /></td>
-        </tr>
-        <tr>
-          <th>Jenis Kelamin Istri</th>
-          <td>
-            <select name="jenis_kelamin_istri" required>
-              <option value="">Pilih Jenis Kelamin</option>
-              <option value="L">Laki-Laki</option>
-              <option value="P">Perempuan</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <th>Alamat Istri</th>
-          <td><textarea name="alamat_istri" rows="3" required></textarea></td>
-        </tr>
-        <tr>
-          <th>Agama Istri</th>
-          <td><input type="text" name="agama_istri" required /></td>
-        </tr>
-        <tr>
-          <th>Pekerjaan Istri</th>
-          <td><input type="text" name="pekerjaan_istri" required /></td>
-        </tr>
-      </table>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="tanggalmenikah">Tanggal Menikah</label>
+              <input
+                type="date"
+                class="form-control"
+                id="tanggalmenikah"
+                name="tanggalmenikah"
+                required
+              />
+            </div>
+            <h3>Data Pasangan</h3>
+            <div class="form-group">
+              <label for="nama_pasangan">Nama Lengkap Pasangan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="namapasangan"
+                name="namapasangan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="nik_pasangan">NIK Pasangan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nikpasangan"
+                name="nikpasangan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tempat_lahir_pasangan">Tempat Lahir Pasangan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tempat_lahir_pasangan"
+                name="tempat_lahir_pasangan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tanggal_lahir_pasangan">Tanggal Lahir Pasangan</label>
+              <input
+                type="date"
+                class="form-control"
+                id="tanggal_lahir_pasangan"
+                name="tanggal_lahir_pasangan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="jenis_kelamin_pasangan">Jenis Kelamin Pasangan</label>
+              <select
+                class="form-control"
+                id="jenis_kelamin_pasangan"
+                name="jenis_kelamin_pasangan"
+                required
+              >
+                <option value="">Pilih Jenis Kelamin</option>
+                <option value="Laki-Laki">Laki-Laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="alamat_pasangan">Alamat Pasangan</label>
+              <textarea
+                class="form-control"
+                id="alamat_pasangan"
+                name="alamat_pasangan"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="agama_pasangan">Agama Pasangan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="agama_pasangan"
+                name="agama_pasangan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="pekerjaan_pasangan">Pekerjaan Pasangan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="pekerjaan_pasangan"
+                name="pekerjaan_pasangan"
+                required
+              />
+            </div>
+          </div>
+        </div>
 
-      <input type="submit" value="Buat Surat" />
-    </form>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

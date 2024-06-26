@@ -23,7 +23,8 @@
   <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
@@ -58,11 +59,12 @@
           <li><a href="{{ route('portofolio') }}">Data Produk</a></li>
           <li><a href="{{ route('team') }}">Program Kerja Kota</a></li>
           <li><a href="{{ route('blog') }}">Berita</a></li>
+          <li><a href="{{ route('wisata') }}">Wisata</a></li>
           <li class="dropdown"><a href="#"><span>Data Penduduk</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Stunting</a></li>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Lansia</a></li>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Balita </a></li>
+              <li><a href="{{ route('report-detail-stunting') }}">Jumlah Penduduk Stunting</a></li>
+              <li><a href="{{ route('report-detail-lansia') }}">Jumlah Penduduk Lansia</a></li>
+              <li><a href="{{ route('report-detail-balita') }}">Jumlah Penduduk Balita </a></li>
              
             </ul>
           </li>

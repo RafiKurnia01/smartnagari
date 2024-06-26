@@ -4,105 +4,144 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Surat Keterangan Penghasilan</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-
-      h1 {
-        text-align: center;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border: 1px solid #ddd;
-      }
-
-      input[type="text"],
-      select {
-        width: 100%;
-        padding: 6px;
-        margin-top: 8px;
-        border: 1px solid #ddd;
-      }
-
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        cursor: pointer;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
+
   <body>
-    <h1>Formulir Surat Keterangan Penghasilan</h1>
+    @if(session()->has('sukses'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('sukses') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                    @endif
+                    @if(session()->has('gagal'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('gagal') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                    @endif
+    <div class="container">
+      <h1 style="padding: 50px; text-align: center;" class="col-12">Formulir Surat Keterangan Penghasilan</h1>
+      <div class="col-12" style="box-shadow: 0 4px 6px rgb(0, 0, 0); padding: 20px;">
+      <form action="{{ route('penghasilanstore') }}" method="POST">
+        @csrf
+        <input type="hidden" id="id_client" name="id_client" value="@if($data) {{ $data }} @endif">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="nama_lengkap">Nama Lengkap</label>
+              <input
+                type="text"
+                class="form-control"
+                id="namalengkap"
+                name="namalengkap"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="nik">NIK</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nik"
+                name="nik"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="jabatan">Jabatan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="jabatan"
+                name="jabatan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="nama_perusahaan">Nama Perusahaan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="namaperusahaan"
+                name="namaperusahaan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="alamat_perusahaan">Alamat Perusahaan</label>
+              <textarea
+                class="form-control"
+                id="alamatperusahaan"
+                name="alamatperusahaan"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="gaji_pokok">Gaji Pokok</label>
+              <input
+                type="number"
+                class="form-control"
+                id="gajipokok"
+                name="gajipokok"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tunjangan">Tunjangan</label>
+              <input
+                type="number"
+                class="form-control"
+                id="tunjangan"
+                name="tunjangan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="penghasilan_tambahan">Penghasilan Tambahan</label>
+              <input
+                type="number"
+                class="form-control"
+                id="penghasilantambahan"
+                name="penghasilantambahan"
+              />
+            </div>
+            <div class="form-group">
+              <label for="total_penghasilan">Total Penghasilan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="totalpenghasilan"
+                name="totalpenghasilan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tujuan_penggunaan">Tujuan Penggunaan</label>
+              <textarea
+                class="form-control"
+                id="tujuanpenggunaan"
+                name="tujuanpenggunaan"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </div>
 
-    <form action="#">
-      <table>
-        <tr>
-          <th>Nama Lengkap</th>
-          <td><input type="text" name="nama_lengkap" required /></td>
-        </tr>
-        <tr>
-          <th>NIK</th>
-          <td><input type="text" name="nik" required /></td>
-        </tr>
-        <tr>
-          <th>Jabatan</th>
-          <td><input type="text" name="jabatan" required /></td>
-        </tr>
-        <tr>
-          <th>Nama Perusahaan</th>
-          <td><input type="text" name="nama_perusahaan" required /></td>
-        </tr>
-        <tr>
-          <th>Alamat Perusahaan</th>
-          <td>
-            <textarea name="alamat_perusahaan" rows="3" required></textarea>
-          </td>
-        </tr>
-        <tr>
-          <th>Gaji Pokok</th>
-          <td><input type="number" name="gaji_pokok" required /></td>
-        </tr>
-        <tr>
-          <th>Tunjangan</th>
-          <td><input type="number" name="tunjangan" required /></td>
-        </tr>
-        <tr>
-          <th>Penghasilan Tambahan</th>
-          <td><input type="number" name="penghasilan_tambahan" /></td>
-        </tr>
-        <tr>
-          <th>Total Penghasilan</th>
-          <td><input type="number" name="total_penghasilan" readonly /></td>
-        </tr>
-        <tr>
-          <th>Tujuan Penggunaan</th>
-          <td>
-            <textarea name="tujuan_penggunaan" rows="3" required></textarea>
-          </td>
-        </tr>
-        <tr>
-          <th></th>
-          <td><input type="submit" value="Buat Surat" /></td>
-        </tr>
-      </table>
-    </form>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Buat Surat</button>
+        </div>
+      </form>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
       var gajiPokokInput = document.getElementById("gaji_pokok");
       var tunjanganInput = document.getElementById("tunjangan");

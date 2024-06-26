@@ -58,6 +58,7 @@
           <li><a href="{{ route('portofolio') }}">Data Produk</a></li>
           <li><a href="{{ route('team') }}">Program Kerja Kota</a></li>
           <li><a href="{{ route('blog') }}">Berita</a></li>
+          <li><a href="{{ route('wisata') }}">Wisata</a></li>
           <li class="dropdown"><a href="#"><span>Data Penduduk</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{ route('report-detail-stunting') }}">Jumlah Penduduk Stunting</a></li>
@@ -110,7 +111,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="pages/examples/login-penghasilan.html">Surat Keterangan Penghasilan</a></h4>
+              <h4><a href="{{ route('penghasilan') }}">Surat Keterangan Penghasilan</a></h4>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
               <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'penghasilan','id_client'=>$data]) }}">Status</a>
               </button>
@@ -140,7 +141,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="pages/examples/login-tidak-mampu.html">Surat Keterangan Tidak Mampu</a></h4>
+              <h4><a href="{{ route('sktm') }}">Surat Keterangan Tidak Mampu</a></h4>
               <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
               <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'sktm','id_client'=>$data]) }}">Status</a>
               </button>
@@ -150,7 +151,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4><a href="pages/examples/login-menikah.html">Surat Keterangan Menikah</a></h4>
+              <h4><a href="{{ route('nikah') }}">Surat Keterangan Menikah</a></h4>
               <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
               <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'nikah','id_client'=>$data]) }}">Status</a>
               </button>

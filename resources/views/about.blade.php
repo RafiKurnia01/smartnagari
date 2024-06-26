@@ -59,11 +59,12 @@
           <li><a href="{{ route('portofolio') }}">Data Produk</a></li>
           <li><a href="{{ route('team') }}">Program Kerja Kota</a></li>
           <li><a href="{{ route('blog') }}">Berita</a></li>
+          <li><a href="{{ route('wisata') }}">Wisata</a></li>
           <li class="dropdown"><a href="#"><span>Data Penduduk</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Stunting</a></li>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Lansia</a></li>
-              <li><a href="pages/forms/report-harian.html">Jumlah Penduduk Balita </a></li>
+              <li><a href="{{ route('report-detail-stunting') }}">Jumlah Penduduk Stunting</a></li>
+              <li><a href="{{ route('report-detail-lansia') }}">Jumlah Penduduk Lansia</a></li>
+              <li><a href="{{ route('report-detail-balita') }}">Jumlah Penduduk Balita </a></li>
              
             </ul>
           </li>

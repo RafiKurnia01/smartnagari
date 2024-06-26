@@ -4,107 +4,155 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Surat Keterangan Tidak Mampu</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-
-      h1 {
-        text-align: center;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border: 1px solid #ddd;
-      }
-
-      input[type="text"],
-      input[type="number"],
-      select,
-      textarea {
-        width: 100%;
-        padding: 6px;
-        margin-top: 8px;
-        border: 1px solid #ddd;
-      }
-
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        cursor: pointer;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
-  <body>
-    <h1>Formulir Surat Keterangan Tidak Mampu</h1>
 
-    <form action="#">
-      <table>
-        <tr>
-          <th>Nama Lengkap</th>
-          <td><input type="text" name="nama_lengkap" required /></td>
-        </tr>
-        <tr>
-          <th>NIK</th>
-          <td><input type="text" name="nik" required /></td>
-        </tr>
-        <tr>
-          <th>Tempat Lahir</th>
-          <td><input type="text" name="tempat_lahir" required /></td>
-        </tr>
-        <tr>
-          <th>Tanggal Lahir</th>
-          <td><input type="date" name="tanggal_lahir" required /></td>
-        </tr>
-        <tr>
-          <th>Jenis Kelamin</th>
-          <td>
-            <select name="jenis_kelamin" required>
-              <option value="">Pilih Jenis Kelamin</option>
-              <option value="L">Laki-Laki</option>
-              <option value="P">Perempuan</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <th>Alamat</th>
-          <td><textarea name="alamat" rows="3" required></textarea></td>
-        </tr>
-        <tr>
-          <th>Pekerjaan</th>
-          <td><input type="text" name="pekerjaan" required /></td>
-        </tr>
-        <tr>
-          <th>Penghasilan Bulanan</th>
-          <td><input type="number" name="penghasilan_bulanan" required /></td>
-        </tr>
-        <tr>
-          <th>Jumlah Tanggungan</th>
-          <td><input type="number" name="jumlah_tanggungan" required /></td>
-        </tr>
-        <tr>
-          <th>Keperluan</th>
-          <td><textarea name="keperluan" rows="3" required></textarea></td>
-        </tr>
-        <tr>
-          <th></th>
-          <td><input type="submit" value="Buat Surat" /></td>
-        </tr>
-      </table>
-    </form>
+  <body>
+    <div class="container">
+      @if(session()->has('sukses'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('sukses') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                    @endif
+                    @if(session()->has('gagal'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('gagal') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                    @endif
+      <h1 style="padding: 50px; text-align: center;" class="col-12">Formulir Surat Keterangan Tidak Mampu</h1>
+      <div class="col-12" style="box-shadow: 0 4px 6px rgb(0, 0, 0); padding: 20px;">
+      <form action="{{ route('sktmstore') }}" method="POST">
+        @csrf
+        <input type="hidden" id="id_client" name="id_client" value="@if($data) {{ $data }} @endif">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="nama_lengkap">Nama Lengkap</label>
+              <input
+                type="text"
+                class="form-control"
+                id="namalengkap"
+                name="namalengkap"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="nik">NIK</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nik"
+                name="nik"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tempat_lahir">Tempat Lahir</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tempatlahir"
+                name="tempatlahir"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tanggal_lahir">Tanggal Lahir</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tanggallahir"
+                name="tanggallahir"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="jenis_kelamin">Jenis Kelamin</label>
+              <select
+                class="form-control"
+                id="jenis_kelamin"
+                name="jenis_kelamin"
+                required
+              >
+                <option value="">Pilih Jenis Kelamin</option>
+                <option value="Laki-Laki">Laki-Laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <textarea
+                class="form-control"
+                id="alamat"
+                name="alamat"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="pekerjaan">Pekerjaan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="pekerjaan"
+                name="pekerjaan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="penghasilan_bulanan">Penghasilan Bulanan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="penghasilan"
+                name="penghasilan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="jumlah_tanggungan">Jumlah Tanggungan</label>
+              <input
+                type="text"
+                class="form-control"
+                id="jumlah_tanggungan"
+                name="jumlah_tanggungan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="keperluan">Keperluan</label>
+              <textarea
+                class="form-control"
+                id="keperluan"
+                name="keperluan"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type= "submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
