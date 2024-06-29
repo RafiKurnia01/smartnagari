@@ -99,7 +99,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="pages/examples/login-domisili.html">Surat Pindah Domisili</a></h4>
+              <h4><a href="{{ route('domisili') }}">Surat Pindah Domisili</a></h4>
               <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
               @if($data)
               <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'domisili','id_client'=>$data]) }}">Status</a>
@@ -121,7 +121,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="pages/examples/login-tanah.html">Surat Keterangan Kepemilikan Tanah</a></h4>
+              <h4><a href="{{ route('tanah') }}">Surat Keterangan Kepemilikan Tanah</a></h4>
               <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
               <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'tanah','id_client'=>$data]) }}">Status</a>
               </button>
@@ -131,7 +131,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="pages/examples/login-meninggal.html">Surat Keterangan Meninggal Dunia</a></h4>
+              <h4><a href="{{ route('suratmeninggal') }}">Surat Keterangan Meninggal Dunia</a></h4>
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
               <button type="button" class="btn btn-primary btn-sm"><a href="{{ route('status', ['jenis_surat'=>'meninggal','id_client'=>$data]) }}">Status</a>
               </button>

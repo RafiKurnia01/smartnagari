@@ -52,6 +52,13 @@ Route::middleware('client')->group(function(){
     Route::post('/services/penghasilan/store', [App\Http\Controllers\WebpenghasilanController::class, 'store'])->name('penghasilanstore');
     Route::get('/services/nikah', [App\Http\Controllers\WebnikahController::class, 'index'])->name('nikah');
     Route::post('/services/nikah/store', [App\Http\Controllers\WebnikahController::class, 'store'])->name('nikahstore');
+    Route::get('/services/meninggal', [App\Http\Controllers\WebmeninggalController::class, 'index'])->name('meninggal');
+    Route::get('/services/domisili', [App\Http\Controllers\WebdomisiliController::class, 'index'])->name('domisili');
+    Route::post('/services/domisili/store', [App\Http\Controllers\WebdomisiliController::class, 'store'])->name('domisilistore');
+    Route::get('/services/tanah', [App\Http\Controllers\WebtanahController::class, 'index'])->name('tanah');
+    Route::post('/services/tanah/store', [App\Http\Controllers\WebtanahController::class, 'store'])->name('tanahstore');
+    Route::get('/services/suratmeninggal', [App\Http\Controllers\WebmeninggalController::class, 'index'])->name('suratmeninggal');
+    Route::post('/services/suratmeninggal/store', [App\Http\Controllers\WebmeninggalController::class, 'store'])->name('suratmeninggalstore');
 });
 
 Route::middleware('user')->group(function(){
@@ -59,6 +66,9 @@ Route::middleware('user')->group(function(){
     Route::get('/admin/logout', [App\Http\Controllers\AdminController::class, 'logout'])->name('logout-admin');
     Route::get('/admin/wisata', [App\Http\Controllers\AdminController::class, 'wisata'])->name('adminwisata');
     Route::post('/admin/wisata/post', [App\Http\Controllers\TourController::class, 'store'])->name('wisata-post');
+    Route::get('/admin/kepengurusan', [App\Http\Controllers\AdminController::class, 'kepengurusan'])->name('adminkepengurusan');
+    Route::get('/admin/proker', [App\Http\Controllers\AdminController::class, 'proker'])->name('adminproker');
+    Route::get('/admin/produk', [App\Http\Controllers\AdminController::class, 'produk'])->name('adminproduk');
 });
 
 Route::get('/about', function(){

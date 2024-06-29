@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -263,14 +263,14 @@ background-color: #0081C9;
                 <!-- Messages Dropdown Menu -->
 
 
-                <a href="../../pages/examples/login.html" class="dropdown-item" style="border-radius: 9px;">
+                <a href="" class="dropdown-item" style="border-radius: 9px;">
                     <!-- Message Start -->
                     <div class="media">
                         <span class="float-right text-sm"></span>
 
                         <div class="media-body">
                             <h3 class="dropdown-item-title">Hallo</h3>
-                            <p style="font-size: small">Fatih</p>
+                            <p style="font-size: small">@if($admin) {{ $admin }} @endif</p>
                         </div>
                     </div>
                     <!-- Message End -->
@@ -287,7 +287,7 @@ background-color: #0081C9;
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light" style="color: #fff;">SMART NAGARI</span>
             </a>

@@ -4,96 +4,113 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Surat Keterangan Kepemilikan Tanah</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-
-      h1 {
-        text-align: center;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border: 1px solid #ddd;
-      }
-
-      input[type="text"],
-      input[type="number"],
-      select {
-        width: 100%;
-        padding: 6px;
-        margin-top: 8px;
-        border: 1px solid #ddd;
-      }
-
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        cursor: pointer;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <link
+      rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
-  <body>
-    <h1>Formulir Surat Keterangan Kepemilikan Tanah</h1>
 
-    <form action="#">
-      <table>
-        <tr>
-          <th>Nama Lengkap</th>
-          <td><input type="text" name="nama_lengkap" required /></td>
-        </tr>
-        <tr>
-          <th>NIK</th>
-          <td><input type="text" name="nik" required /></td>
-        </tr>
-        <tr>
-          <th>Alamat</th>
-          <td><textarea name="alamat" rows="3" required></textarea></td>
-        </tr>
-        <tr>
-          <th>Nomor Sertifikat</th>
-          <td><input type="text" name="nomor_sertifikat" required /></td>
-        </tr>
-        <tr>
-          <th>Letak Tanah</th>
-          <td><textarea name="letak_tanah" rows="3" required></textarea></td>
-        </tr>
-        <tr>
-          <th>Luas Tanah (m²)</th>
-          <td><input type="number" name="luas_tanah" required /></td>
-        </tr>
-        <tr>
-          <th>Batas-Batas Tanah</th>
-          <td>
-            <textarea name="batas_tanah" rows="3" required></textarea>
-          </td>
-        </tr>
-        <tr>
-          <th>Tujuan Penggunaan</th>
-          <td>
-            <textarea name="tujuan_penggunaan" rows="3" required></textarea>
-          </td>
-        </tr>
-        <tr>
-          <th></th>
-          <td><input type="submit" value="Buat Surat" /></td>
-        </tr>
-      </table>
-    </form>
+  <body>
+    <div class="container">
+      <h1 style="padding: 50px; text-align: center;" class="col-12">Formulir Surat Keterangan Kepemilikan Tanah</h1>
+      <div class="col-12" style="box-shadow: 0 4px 6px rgb(0, 0, 0); padding: 20px;">
+      <form action="{{ route('tanahstore') }}" method="POST">
+        @csrf
+        <input type="hidden" id="id_client" name="id_client" value="@if($data) {{ $data }} @endif">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="namalengkap">Nama Lengkap</label>
+              <input
+                type="text"
+                class="form-control"
+                id="namalengkap"
+                name="namalengkap"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="nik">NIK</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nik"
+                name="nik"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <textarea
+                class="form-control"
+                id="alamat"
+                name="alamat"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="nomor_sertifikat">Nomor Sertifikat</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomor_sertifikat"
+                name="nomor_sertifikat"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="letak_tanah">Letak Tanah</label>
+              <textarea
+                class="form-control"
+                id="letak_tanah"
+                name="letak_tanah"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="luas_tanah">Luas Tanah (m²)</label>
+              <input
+                type="text"
+                class="form-control"
+                id="luas_tanah"
+                name="luas_tanah"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="batas_tanah">Batas-Batas Tanah</label>
+              <textarea
+                class="form-control"
+                id="batas_tanah"
+                name="batas_tanah"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="tujuanpenggunaan">Tujuan Penggunaan</label>
+              <textarea
+                class="form-control"
+                id="tujuanpenggunaan"
+                name="tujuanpenggunaan"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Buat Surat</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

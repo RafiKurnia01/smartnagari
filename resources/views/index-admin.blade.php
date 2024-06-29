@@ -268,7 +268,7 @@
           <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/kepengurusan.html" class="text-dark" target="_blank" rel="noopener noreferrer">Kepengurusan Nagari </a></span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminkepengurusan') }}" class="text-dark" rel="noopener noreferrer">Kepengurusan Nagari </a></span>
         </div>
         
         </div>
@@ -296,7 +296,7 @@
           <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/wisata.html" class="text-dark" target="_blank" rel="noopener noreferrer">Program Kerja </a></span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminproker') }}" class="text-dark" rel="noopener noreferrer">Program Kerja </a></span>
         </div>
         
         </div>
@@ -310,7 +310,7 @@
           <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/data-produk.html" class="text-dark" target="_blank" rel="noopener noreferrer">Produk  </a></span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminproduk') }}" class="text-dark" rel="noopener noreferrer">Produk  </a></span>
         </div>
         
         </div>

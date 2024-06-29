@@ -45,4 +45,28 @@ class AdminController extends Controller
         $admin = $data->nama;
         return view('wisata', compact('admin'));
     }
+
+    public function kepengurusan(){
+        $data = Auth::guard('web')->user();
+        $admin = $data->nama;
+        return view('kepengurusan-admin', compact('admin'));
+    }
+
+    public function proker(){
+        $data = Auth::guard('web')->user();
+        $admin = $data->nama;
+        return view('admin-proker', compact('admin'));
+    }
+
+    public function produk(){
+        $data = Auth::guard('web')->user();
+        $admin = $data->nama;
+        return view('admin-produk', compact('admin'));
+    }
+
+    public function sejarah(){
+        $data = Auth::guard('web')->user();
+        $admin = $data->nama;
+        return view('sejarah-admin', compact('admin'));
+    }
 }

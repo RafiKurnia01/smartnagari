@@ -11,7 +11,7 @@ class SuratController extends Controller
         $surat = Surattanah::all();
         return response()->json([
             'status' => 'success',
-            'message' => 'Daftar data surat keterangan tidak mampu',
+            'message' => 'Daftar data surat tanah',
             'data' => $surat
         ], 200);
     }

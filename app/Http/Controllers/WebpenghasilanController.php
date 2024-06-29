@@ -56,6 +56,7 @@ class WebpenghasilanController extends Controller
             return redirect()->back()->with('gagal', 'Gagal mengajukan surat, silahkan ulangi kembali');
         }
 
-        return view('services')->with('sukses', 'Surat berhasil diajukan');
+        // return view('services')->with('sukses', 'Surat berhasil diajukan');
+        return redirect()->route('services')->with('sukses', 'Surat berhasil diajukan');
     }
 }
