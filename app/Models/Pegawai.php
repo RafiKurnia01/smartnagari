@@ -14,4 +14,8 @@ class Pegawai extends Model
     public function proker(){
         return $this->hasMany(Proker::class, 'id_pegawai');
     }
+
+    public function jabatan(){
+        return $this->belongsTo(Jabatan::class, 'jabatan_id');
+    }
 }

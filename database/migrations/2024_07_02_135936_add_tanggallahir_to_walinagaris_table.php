@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('walinagaris', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
-            $table->string('nama');
-            $table->string('nip');
-            $table->string('alamat');
-            $table->string('riwayatpendidikan');
-            $table->timestamps();
+        Schema::table('walinagaris', function (Blueprint $table) {
+            $table->date('tanggallahir')->after('alamat');
         });
     }
 
@@ -27,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('walikotas');
+        Schema::table('walinagaris', function (Blueprint $table) {
+            //
+        });
     }
 };

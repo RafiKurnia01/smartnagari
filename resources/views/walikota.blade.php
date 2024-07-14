@@ -111,7 +111,7 @@
         <div class="row">
           @foreach($d as $data)
             <div class="col-lg-6">
-              <img src="{{ asset('assets/img/'.$data->image) }}" class="img-fluid" alt="">
+              <img width="300" height="900" src="{{ asset('storage/'.$data->image) }}" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 content">
               <h3>Profil Wali Kota Padang</h3>
@@ -120,10 +120,11 @@
               </p> --}}
               <h5><b>{{ $data->nama }}</b></h5>
               <ul>
-                <li><i class="bi bi-check-circle"></i> {{ $data->nip }}</li>
-                <li><i class="bi bi-check-circle"></i> {{ $data->alamat }}</li>
-                <li><i class="bi bi-check-circle"></i> {{ $data->tgllahir }}</li>
+                <li><i class="bi bi-check-circle"></i><b>NIP :</b> {{ $data->nip }}</li>
+                <li><i class="bi bi-check-circle"></i><b>ALAMAT :</b> {{ $data->alamat }}</li>
+                <li><i class="bi bi-check-circle"></i><b>TANGGAL LAHIR :</b>{{ $data->tanggallahir }}</li>
               </ul>
+              <h4><b>RIWAYAT PENDIDIKAN</b></h4>
               <p>
                 {{ $data->riwayatpendidikan }}
               </p>

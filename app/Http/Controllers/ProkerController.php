@@ -11,6 +11,4 @@ class ProkerController extends Controller
         $data = Proker::with('pegawai')->get();
         return view('proker', compact('data'));
     }
-
-
 }

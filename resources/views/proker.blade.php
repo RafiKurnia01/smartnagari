@@ -98,9 +98,9 @@
           @foreach ($data as $d)
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div class="member">
-                <img src="{{ asset('assets/img/team/'.$d->image) }}" alt="">
+                <img src="{{ asset('storage/'.$d->image) }}" alt="">
                 <h4>{{ $d->namaproker }}</h4>
-                <span>{{ $d->pegawai->namapegawai }}</span>
+                <span>Penanggung jawab : {{ $d->pegawai->namapegawai }}</span>
                 <p>
                   {{ $d->keterangan }}
                 </p>

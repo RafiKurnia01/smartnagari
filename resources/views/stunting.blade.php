@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FORM</title>
+    <title>Data Penduduk</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -263,14 +263,16 @@ background-color: #0081C9;
                 <!-- Messages Dropdown Menu -->
 
 
-                <a href="" class="dropdown-item" style="border-radius: 9px;">
+                <a href="../../pages/examples/login.html" class="dropdown-item" style="border-radius: 9px;">
                     <!-- Message Start -->
                     <div class="media">
-                        <span class="float-right text-sm"></span>
-
+                       
                         <div class="media-body">
-                            <h3 class="dropdown-item-title">Hallo</h3>
-                            <p style="font-size: small">@if($admin) {{ $admin }} @endif</p>
+                            <h3 class="dropdown-item-title">
+                                Hallo
+
+                            </h3>
+                            <p style="font-size: small;">@if($admin) {{ $admin }} @endif</p>
                         </div>
                     </div>
                     <!-- Message End -->
@@ -287,61 +289,77 @@ background-color: #0081C9;
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
                 <span class="brand-text font-weight-light" style="color: #fff;">SMART NAGARI</span>
             </a>
-
+        
             <!-- Sidebar -->
             <div class="sidebar">
-
-
+            
+            
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
+                                           with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                          <a href="./index.html" class="nav-link active">
-                            <i class="nav-icon fas fa-home"></i>
-                            <p style="color: #fff;">
-                              Dashboard
-                            </p>
-                          </a>
-                         
+                            <a href="../../index.html" class="nav-link active">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p style="color: #fff;">
+                                    Dashboard
+            
+                                </p>
+                            </a>
+            
                         </li>
-                       
+            
                         <li class="nav-item has-treeview">
-                          <a href="{{ route('surat') }}" class="nav-link">
-                            <i class="nav-icon fas fa-edit"></i>
-                            <p style="color: #fff;">
-                              Pelayanan Surat
-                            
-                            </p>
-                          </a>
+                            <a href="../forms/data-produk.html" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p style="color: #fff;">
+                                    Data Produk
+            
+                                </p>
+                            </a>
                         </li>
                         <li class="nav-item has-treeview">
-                          <a href="{{ route('adminpegawai') }}" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p style="color: #fff;">
-                              Data Pegawai
-                            </p>
-                          </a>
+                            <a href="../forms/data-penduduk.html" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p style="color: #fff;">
+                                    Data Penduduk
+            
+                                </p>
+                            </a>
                         </li>
-                        <li class="nav-item has-treeview das" >
-                          <a href="{{ route('logout-admin') }}" class="nav-link">
-                            <i class="nav-icon fa fa-sign-out-alt"></i>
-                            <p style="color: #fff;">
-                              Log Out
-                            </p>
-                          </a>
-                        </li>         
-                      </ul>
+                        <li class="nav-item has-treeview">
+                            <a href="../tables/settingan.html" class="nav-link">
+                                <i class="nav-icon fa fa-cog"></i>
+                                <p style="color: #fff;">
+                                    User
+            
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview das">
+                            <a href="./pages/tables/settingan.html" class="nav-link">
+                                <i class="nav-icon fa fa-sign-out-alt"></i>
+                                <p style="color: #fff;">
+                                    Log Out
+            
+                                </p>
+                            </a>
+                        </li>
+            
+            
+                    </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
         </aside>
+
+
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -353,7 +371,7 @@ background-color: #0081C9;
                             <!-- <h1 class="m-0 text-dark font-weight-bold">Dashboard</h1> -->
                             <div class="section-title position-relative m-0 font-weight-bold ">
 
-                                <h1 class="mt-2">Data Surat Kepengurusan</h1>
+                                <h1 class="mt-2">Data Penduduk</h1>
                             </div>
                         </div><!-- /.col -->
                         <div class="col-sm-6 mt-3">
@@ -362,14 +380,14 @@ background-color: #0081C9;
                                 <li class="breadcrumb-item"> <i class="nav-icon fas fa-home mr-2"
                                         style="color: #ff0022;"></i><a style="font-weight: bold;"
                                         href="../../index.html">Home</a></li>
-                                <li class="breadcrumb-item active">Data Kepengurusan</li>
+                                <li class="breadcrumb-item active">Data Penduduk Stunting</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.con
-      Main content -->
+    Main content -->
             <section class="content">
                 <div class="container">
                     <div class="row  d-flex justify-content-center">
@@ -379,66 +397,68 @@ background-color: #0081C9;
                             <div class="card " style="border-radius: 10px;">
                                 <div class="card-header d-flex justify-content-center"
                                     style="background-color: #ff0022; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                                    <h3 class="card-title  " style="color: #fff; ">Inputkan Data Kepengurusan</h3>
+                                    <h3 class="card-title  " style="color: #fff; ">Inputkan Data Penduduk Stunting</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="{{ route('kepengurusanpost') }}" method="POST" >
+                                <form role="form" action="{{ route('stuntingpost') }}" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="namapegawai">Nama Pegawai </label>
+                                                    <label for="nama">Nama Anak</label>
                                                     <input type="text" class="form-control"
-                                                        style="background-color: #fff;" id="namapegawai" name="namapegawai"
-                                                        placeholder="Nama Pegawai" required>
+                                                        style="border-color: #ff0022;" id="nama" name="nama"
+                                                        placeholder="Nama Anak" required>
                                                 </div>
-                                                <div class="form-group w-100">
-                                                    <label for="jabatan_id">Jabatan </label>
-                                                    <select class="form-control" style="background-color: #fff;"
-                                                        id="jabatan_id" name="jabatan_id" required>
-                                                        <option value="" disabled selected>Pilih </option>
-                                                        <option value= 1>Kepala Urusan Keuangan</option>
-                                                        <option value= 2>Kepala Urusan Umum</option>
-                                                        <option value= 3>Kepala Urusan Perencanaan</option>
-                                                        <option value= 4>Sekretaris Desa</option>
-                                                        <option value= 5>Kepala Seksi Pelayanan</option>
-                                                        <option value= 6>Kepala Seksi Kesejahteraan</option>
-                                                        <option value= 7>Kepala Seksi Pemerintahan</option>
-                                                        <option value= 8>Jorong</option>
+                                                <div class="form-group">
+                                                    <label for="nik">NIK</label>
+                                                    <input type="text" class="form-control"
+                                                        style="border-color: #ff0022;" id="nik" name="nik"
+                                                        placeholder="NIK (Masukkan NIK orang tua jika tidak ada)" required>
+                                                </div>
 
-
-                                                        <!-- Add more categories as needed -->
+                                                <div class="form-group">
+                                                    <label for="umur">Umur</label>
+                                                    <input type="number" class="form-control"
+                                                        style="border-color: #ff0022;" id="umur" name="umur" placeholder="Umur" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="jenisKelamin">Jenis Kelamin</label>
+                                                    <select class="form-control" style="border-color: #ff0022;"
+                                                        id="jenis_kelamin" name="jenis_kelamin" required>
+                                                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                                        <option value="laki-laki">Laki-laki</option>
+                                                        <option value="perempuan">Perempuan</option>
                                                     </select>
                                                 </div>
-                                                
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="NIP">NIP</label>
+                                                <div class="form-group w-100">
+                                                    <label for="nama_ibu">Nama Ibu Kandung</label>
                                                     <input type="text" class="form-control"
-                                                        style="background-color: #fff;" id="nik" placeholder="NIP" name="NIP">
+                                                        style="border-color: #ff0022;" id="nama_ibu" name="nama_ibu"
+                                                        placeholder="Nama Ibu" required>
                                                 </div>
-                                               
-                                                <div class="form-group">
-                                                    <label for="tgllahir">Tanggal Lahir</label>
-                                                    <input type="date" class="form-control"
-                                                        style="background-color: #fff;" id="tgllahir" name="tgllahir"
-                                                        placeholder="Pilih Tanggal Lahir" min="1900-01-01"
-                                                        max="2024-12-31" required>
-                                                </div>                                         
+                                                <div class="form-group w-100">
+                                                    <label for="nama_ayah">Nama Ayah Kandung</label>
+                                                    <input type="text" class="form-control"
+                                                        style="border-color: #ff0022;" id="nama_ayah" name="nama_ayah"
+                                                        placeholder="Nama Ayah" required>
+                                                </div>
+
+                                                <div class="form-group w-100">
+                                                    <label for="alamat">Alamat</label>
+                                                    <input type="text" class="form-control"
+                                                        style="border-color: #ff0022;" id="alamat" name="alamat"
+                                                        placeholder="Alamat" required>
+                                                </div>
                                             </div>
-                                            <div class="col-md-12">
-                                                <label for="alamat">Alamat</label>
-                                                <input type="text" class="form-control"
-                                                    style="background-color: #fff;" id="alamat" name="alamat" placeholder="Alamat" >
+                                            <div class="box">
+                                                <button class="btn btn-danger" style="background-color:#ff0022; border-radius: 9px; width: 100px;" type="submit">Submit</button>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="box">
-                                        <button class="btn btn-danger text-white"
-                                            style="background-color:#ff0022; border-radius: 9px; width: 100px">Submit</button>
                                     </div>
                                 </form>
 
@@ -446,18 +466,46 @@ background-color: #0081C9;
 
 
 
+
+
+
+
+
+
+
+
+
+
+                                <!-- /.card-body -->
+
+                                <!-- <div class="card-footer  d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary w-lg-25">Submit</button>
+                </div> -->
+                                
+
+                                <div id="popup1" class="overlay">
+                                    <div class="popup justify-content-center">
+                                        <div class="bg-white p-3" style="border-radius: 9px;">
+                                            <div class="w-75 p-2 mx-auto"
+                                                style="border-radius: 9px; background-color: #ffbcbcfc;">
+                                                <p style="font-size: smaller;" class="text-center">Data Tersimpan!</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- <div class="col-lg-4 tengah mx-auto  ">
-                            <button class="btn d-block  w-75 " type="button" style="background-color: #52b3e8;  color: #fff; border-radius: 9px;  ">YES
-                        
-                            </button>
-                        
-                          </div>
-                          <div class="col-lg-4 mx-auto ">
-                            <button class="btn d-block w-75 " type="button" style="background-color:#FF8787; color: #fff; border-radius: 9px;   "> NO
-                        
-                            </button>
-                        
-                          </div> -->
+                          <button class="btn d-block  w-75 " type="button" style="background-color: #52b3e8;  color: #fff; border-radius: 9px;  ">YES
+                      
+                          </button>
+                      
+                        </div>
+                        <div class="col-lg-4 mx-auto ">
+                          <button class="btn d-block w-75 " type="button" style="background-color:#FF8787; color: #fff; border-radius: 9px;   "> NO
+                      
+                          </button>
+                      
+                        </div> -->
 
 
                             </div>
@@ -468,14 +516,27 @@ background-color: #0081C9;
                 </div>
                 </form>
         </div>
-        <!-- /.content-wrapper -->
-        <!-- /.content-wrapper -->
+        <!-- /.card -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+
+
+    </div>
+    <!--/.col (left) -->
+
+    </div>
+    <!-- /.row -->
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
@@ -489,7 +550,11 @@ background-color: #0081C9;
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
 </body>
 
 </html>

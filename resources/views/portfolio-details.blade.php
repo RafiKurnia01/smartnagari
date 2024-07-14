@@ -116,7 +116,7 @@
                 <div class="swiper-wrapper align-items-center">
 
                   <div class="swiper-slide">
-                    <img src="{{ asset('assets/img/portfolio/'.$dataproduk->image) }}" alt="">
+                    <img src="{{ asset('storage/'.$dataproduk->image) }}" alt="">
                   </div>
                 </div>
                 <div class="swiper-pagination"></div>

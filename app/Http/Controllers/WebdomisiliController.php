@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Suratdomisili;
+use App\Models\Suratmeninggal;
 
 class WebdomisiliController extends Controller
 {
@@ -52,5 +53,51 @@ class WebdomisiliController extends Controller
 
         // return view('services')->with('sukses', 'Surat berhasil diajukan');
         return redirect()->route('services')->with('sukses', 'Surat berhasil diajukan');
+    }
+
+    public function detail($id){
+        $user = auth()->guard('web')->user();
+        $admin = $user->nama;
+        $data = Suratdomisili::find($id);
+        return view('detail-domisili', compact('data', 'admin'));
+    }
+
+    public function updateStatus(Request $request){
+        $validation = $request->validate([
+            'id' => 'required',
+            'status' => 'required'
+        ]);
+
+        if(!$validation){
+            return redirect()->back()->with('gagal', 'Pastikan semua data terisi dengan benar');
+        }
+
+        $update = Suratdomisili::where('id', $request->id)->update([
+            'id_statussurat' => $request->status
+        ]);
+
+        if(!$update){
+            return redirect()->back()->with('gagal', 'Gagal mengupdate status surat');
+        }
+
+        return redirect()->route('surat')->with('sukses', 'Status surat berhasil diupdate');
+    }
+
+    public function delete(Request $request){
+        $validation = $request->validate([
+            'id' => 'required'
+        ]);
+
+        if(!$validation){
+            return redirect()->back()->with('gagal', 'Pastikan semua data terisi dengan benar');
+        }
+
+        $delete = Suratdomisili::where('id', $request->id)->delete();
+
+        if(!$delete){
+            return redirect()->back()->with('gagal', 'Gagal menghapus surat');
+        }
+
+        return redirect()->route('surat')->with('sukses', 'Surat berhasil dihapus');
     }
 }

@@ -59,4 +59,50 @@ class WebpenghasilanController extends Controller
         // return view('services')->with('sukses', 'Surat berhasil diajukan');
         return redirect()->route('services')->with('sukses', 'Surat berhasil diajukan');
     }
+
+    public function detail($id){
+        $user = auth()->guard('web')->user();
+        $admin = $user->nama;
+        $data = Suratpenghasilan::find($id);
+        return view('detail-penghasilan', compact('data', 'admin'));       
+    }
+
+    public function updateStatus(Request $request){
+        $validation = $request->validate([
+            'id' => 'required',
+            'status' => 'required|integer'
+        ]);
+
+        if(!$validation){
+            return redirect()->back()->with('gagal', 'Pastikan inputan anda sesuai');
+        }
+
+        $update = Suratpenghasilan::where('id', $request->id)->update([
+            'id_statussurat' => $request->status
+        ]);
+
+        if(!$update){
+            return redirect()->back()->with('gagal', 'Gagal mengubah status surat');
+        }
+
+        return redirect()->route('surat')->with('sukses', 'Status surat berhasil diubah');
+    }
+
+    public function delete(Request $request){
+        $validation = $request->validate([
+            'id' => 'required'
+        ]);
+
+        if(!$validation){
+            return redirect()->back()->with('gagal', 'Pastikan inputan anda sesuai');
+        }
+
+        $delete = Suratpenghasilan::where('id', $request->id)->delete();
+
+        if(!$delete){
+            return redirect()->back()->with('gagal', 'Gagal menghapus surat');
+        }
+
+        return redirect()->route('surat')->with('sukses', 'Surat berhasil dihapus');
+    }
 }

@@ -286,7 +286,7 @@ background-color: #0081C9;
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="" class="brand-link">
                 <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light" style="color: #fff;">SMART NAGARI</span>
@@ -353,7 +353,7 @@ background-color: #0081C9;
                             <!-- <h1 class="m-0 text-dark font-weight-bold">Dashboard</h1> -->
                             <div class="section-title position-relative m-0 font-weight-bold ">
 
-                                <h1 class="mt-2">Data Surat Kepengurusan</h1>
+                                <h1 class="mt-2">Surat Keterangan kepemilikan Tanah</h1>
                             </div>
                         </div><!-- /.col -->
                         <div class="col-sm-6 mt-3">
@@ -362,7 +362,7 @@ background-color: #0081C9;
                                 <li class="breadcrumb-item"> <i class="nav-icon fas fa-home mr-2"
                                         style="color: #ff0022;"></i><a style="font-weight: bold;"
                                         href="../../index.html">Home</a></li>
-                                <li class="breadcrumb-item active">Data Kepengurusan</li>
+                                <li class="breadcrumb-item active">Detail Surat</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -379,66 +379,99 @@ background-color: #0081C9;
                             <div class="card " style="border-radius: 10px;">
                                 <div class="card-header d-flex justify-content-center"
                                     style="background-color: #ff0022; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                                    <h3 class="card-title  " style="color: #fff; ">Inputkan Data Kepengurusan</h3>
+                                    <h3 class="card-title  " style="color: #fff; ">Detail Pengajuan Surat</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="{{ route('kepengurusanpost') }}" method="POST" >
-                                    @csrf
+                                <form role="form" >
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-10">
                                                 <div class="form-group">
-                                                    <label for="namapegawai">Nama Pegawai </label>
+                                                    <label for="exampleInputEmail1">Nama Lengkap</label>
                                                     <input type="text" class="form-control"
-                                                        style="background-color: #fff;" id="namapegawai" name="namapegawai"
-                                                        placeholder="Nama Pegawai" required>
+                                                        style="background-color: #fff;" value="{{ $data->namalengkap }}" readonly>
                                                 </div>
-                                                <div class="form-group w-100">
-                                                    <label for="jabatan_id">Jabatan </label>
-                                                    <select class="form-control" style="background-color: #fff;"
-                                                        id="jabatan_id" name="jabatan_id" required>
-                                                        <option value="" disabled selected>Pilih </option>
-                                                        <option value= 1>Kepala Urusan Keuangan</option>
-                                                        <option value= 2>Kepala Urusan Umum</option>
-                                                        <option value= 3>Kepala Urusan Perencanaan</option>
-                                                        <option value= 4>Sekretaris Desa</option>
-                                                        <option value= 5>Kepala Seksi Pelayanan</option>
-                                                        <option value= 6>Kepala Seksi Kesejahteraan</option>
-                                                        <option value= 7>Kepala Seksi Pemerintahan</option>
-                                                        <option value= 8>Jorong</option>
-
-
-                                                        <!-- Add more categories as needed -->
-                                                    </select>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">NIK</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->nik }}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Jabatan</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->jabatan }}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Nama Perusahaan</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->namaperusahaan }}" readonly>
                                                 </div>
                                                 
-                                            </div>
-                                            <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="NIP">NIP</label>
+                                                    <label for="exampleInputEmail1">Alamat Perusahaan</label>
                                                     <input type="text" class="form-control"
-                                                        style="background-color: #fff;" id="nik" placeholder="NIP" name="NIP">
+                                                        style="background-color: #fff;" value="{{ $data->alamatperusahaan }}" readonly>
                                                 </div>
-                                               
                                                 <div class="form-group">
-                                                    <label for="tgllahir">Tanggal Lahir</label>
-                                                    <input type="date" class="form-control"
-                                                        style="background-color: #fff;" id="tgllahir" name="tgllahir"
-                                                        placeholder="Pilih Tanggal Lahir" min="1900-01-01"
-                                                        max="2024-12-31" required>
-                                                </div>                                         
-                                            </div>
-                                            <div class="col-md-12">
-                                                <label for="alamat">Alamat</label>
-                                                <input type="text" class="form-control"
-                                                    style="background-color: #fff;" id="alamat" name="alamat" placeholder="Alamat" >
+                                                    <label for="exampleInputEmail1">Gaji Pokok</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->gajipokok }}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Tunjangan</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->tunjangan }}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Penghasilan Tambahan</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->penghasilantambahan }}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Total Penghasilan</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->totalpenghasilan }}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="alasanMengurusSurat">Tujuan Penggunaan</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->tujuanpenggunaan }}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Status Pengajuan</label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" value="{{ $data->statussurat->status }}" readonly>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="box">
-                                        <button class="btn btn-danger text-white"
-                                            style="background-color:#ff0022; border-radius: 9px; width: 100px">Submit</button>
+                                </form>
+
+                                <form role="form" action="{{ route('update-status-penghasilan') }}" method="POST">
+                                    @csrf
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="form-group ">
+                                                    <input type="hidden" name="id" id="id" value="{{ $data->id }}">
+                                                    <label for="categorySelect">Ubah Status Surat</label>
+                                                    <select class="form-control" style="border-color: #ff0022;" id="status" name="status" required>
+                                                      <option value="" disabled selected>Pilih Status</option>
+                                                      <option value=1>Pengajuan Diterima</option>
+                                                      <option value=2>Pengajuan Diproses</option>
+                                                      <option value=3>Surat Dijemput</option>
+                                                      <option value=4>Surat Sudah Dijemput</option>
+                              
+                                                      <!-- Add more categories as needed -->
+                                                    </select>
+                                                  </div>
+                                                  <div class="box">
+                                                      <button type="submit" class="btn btn-danger text-white"
+                                                          style="background-color:#ff0022; border-radius: 9px; width: 100px;">Submit</button>
+                                                  </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
 

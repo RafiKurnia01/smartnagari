@@ -61,4 +61,50 @@ class WebmeninggalController extends Controller
 
         return redirect()->route('services')->with('sukses', 'Surat berhasil diajukan');
     }
+
+    public function detail($id){
+        $user = auth()->guard('web')->user();
+        $admin = $user->nama;
+        $data = Suratmeninggal::find($id);
+        return view('detail-meninggal', compact('data', 'admin'));
+    }
+
+    public function updateStatus(Request $request){
+        $validation = $request->validate([
+            'id' => 'required',
+            'status' => 'required'
+        ]);
+
+        if(!$validation){
+            return redirect()->back()->with('gagal', 'Perhatikan kembali inputan anda');
+        }
+
+        $update = Suratmeninggal::where('id', $request->id)->update([
+            'id_statussurat' => $request->status
+        ]);
+
+        if(!$update){
+            return redirect()->back()->with('gagal', 'Gagal mengubah status surat');
+        }
+
+        return redirect()->route('surat')->with('sukses', 'Status surat berhasil diubah');
+    }
+
+    public function delete(Request $request){
+        $validation = $request->validate([
+            'id' => 'required'
+        ]);
+
+        if(!$validation){
+            return redirect()->back()->with('gagal', 'Perhatikan kembali inputan anda');
+        }
+
+        $delete = Suratmeninggal::where('id', $request->id)->delete();
+
+        if(!$delete){
+            return redirect()->back()->with('gagal', 'Gagal menghapus surat');
+        }
+
+        return redirect()->route('surat')->with('sukses', 'Surat berhasil dihapus');
+    }
 }

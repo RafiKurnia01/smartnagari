@@ -275,56 +275,42 @@ background-color: #0081C9;
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
-                               with font-awesome or any other icon font library -->
+               with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="../../index.html" class="nav-link active">
+            <a href="./index.html" class="nav-link active">
               <i class="nav-icon fas fa-home"></i>
               <p style="color: #fff;">
                 Dashboard
-    
               </p>
             </a>
-    
+           
           </li>
-    
+         
           <li class="nav-item has-treeview">
-            <a href="../forms/data-produk.html" class="nav-link">
+            <a href="{{ route('surat') }}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p style="color: #fff;">
-                Data Produk
-    
+                Pelayanan Surat
+              
               </p>
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="../forms/data-penduduk.html" class="nav-link">
+            <a href="{{ route('adminpegawai') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p style="color: #fff;">
-                Data Penduduk
-    
+                Data Pegawai
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="../tables/settingan.html" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
-              <p style="color: #fff;">
-                User
-    
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview das">
-            <a href="./pages/tables/settingan.html" class="nav-link">
+          <li class="nav-item has-treeview das" >
+            <a href="{{ route('logout-admin') }}" class="nav-link">
               <i class="nav-icon fa fa-sign-out-alt"></i>
               <p style="color: #fff;">
                 Log Out
-    
               </p>
             </a>
-          </li>
-    
-    
+          </li>         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

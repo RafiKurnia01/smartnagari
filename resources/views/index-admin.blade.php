@@ -187,43 +187,30 @@
           </li>
          
           <li class="nav-item has-treeview">
-            <a href="./pages/forms/data-produk.html" class="nav-link">
+            <a href="{{ route('surat') }}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p style="color: #fff;">
-                Data Produk
+                Pelayanan Surat
               
               </p>
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="./pages/forms/data-penduduk.html" class="nav-link">
+            <a href="{{ route('adminpegawai') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p style="color: #fff;">
-                Data Penduduk
-               
+                Data Pegawai
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="./pages/tables/settingan.html" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
+          <li class="nav-item has-treeview das" >
+            <a href="{{ route('logout-admin') }}" class="nav-link">
+              <i class="nav-icon fa fa-sign-out-alt"></i>
               <p style="color: #fff;">
-                User
-              
+                Log Out
               </p>
             </a>
-          </li>
-        <li class="nav-item has-treeview das" >
-          <a href="{{ route('logout-admin') }}" class="nav-link">
-            <i class="nav-icon fa fa-sign-out-alt"></i>
-            <p style="color: #fff;">
-              Log Out
-        
-            </p>
-          </a>
-        </li>
-         
-         
+          </li>         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -324,7 +311,7 @@
           <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/sejarah-kota.html" class="text-dark" target="_blank" rel="noopener noreferrer">Sejarah Kota</a></span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminwalinagari') }}" class="text-dark" rel="noopener noreferrer">Wali Nagari</a></span>
         </div>
         
         </div>
@@ -332,31 +319,29 @@
       </div>
       <!-- END SEJARAH KOTA-->
 
-      <!-- VISI MISI-->
+      {{-- <!-- VISI MISI-->
       <div class="col-12 col-sm-6 col-md-3" >
         <div class="info-box mb-3" >
           <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
             <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/visi-misi.html" class="text-dark" target="_blank" rel="noopener noreferrer">Visi Misi</a></span>
-        </div>
+          </div>
         
         </div>
       
       </div>
-      <!-- END VISI MISI-->
+      <!-- END VISI MISI--> --}}
      
  
      
     </div>
 
-    <!-- END PELAYANAN -->
-
     <!-- PELAYANAN -->
-      <h6 class="font-weight-bold mt-4">Pelayanan Surat</h6>
+      <h6 class="font-weight-bold mt-4">Pelayanan</h6>
     <div class="row">
     
-      <!-- MENINGGAL DUNIA -->
+      {{-- <!-- MENINGGAL DUNIA -->
       <div class="col-12 col-sm-6 col-md-3" >
         <div class="info-box mb-3" >
           <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
@@ -423,7 +408,7 @@
         
         </div>
       
-      </div>
+      </div> --}}
       <!-- END SURAT PENGHASILAN -->
 
       <!-- PENGADUAN-->
@@ -432,7 +417,7 @@
           <span class="info-box-icon  elevation-1" ><i class="fas fa-file-alt" ></i></span>
 
           <div class="info-box-content" style="display: flex; flex-direction: column;">
-            <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/pengaduan.html" class="text-dark" target="_blank" rel="noopener noreferrer">Pengaduan</a></span>
+            <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminpengaduan') }}" class="text-dark" rel="noopener noreferrer">Pengaduan</a></span>
         </div>
         
         </div>
@@ -460,8 +445,7 @@
             <span class="info-box-icon  elevation-1"><i class="fas fa-stethoscope"></i></span>
       
             <div class="info-box-content" style="display: flex; flex-direction: column;">
-              <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/lansia.html" class="text-dark"
-                  target="_blank" rel="noopener noreferrer">Jumlah Penduduk <br> Stunting</a> </span>
+              <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminstunting') }}" class="text-dark" rel="noopener noreferrer">Penduduk <br> Stunting</a> </span>
             </div>
           </div>
         </div>
@@ -472,8 +456,8 @@
             <span class="info-box-icon  elevation-1"><i class="fa fa-users"></i></span>
       
             <div class="info-box-content" style="display: flex; flex-direction: column;">
-              <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/stunting.html"
-                  class="text-dark" target="_blank" rel="noopener noreferrer">Jumlah Penduduk <br> Lansia</a> </span>
+              <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminlansia') }}"
+                  class="text-dark" rel="noopener noreferrer">Penduduk <br> Lansia</a> </span>
             </div>
       
       
@@ -487,8 +471,7 @@
             <span class="info-box-icon  elevation-1"><i class="fa fa-baby"></i></span>
       
             <div class="info-box-content" style="display: flex; flex-direction: column;">
-              <span class="info-box-text" style="white-space: nowrap;"> <a href="./pages/forms/balita.html" class="text-dark"
-                  target="_blank" rel="noopener noreferrer">Jumlah Penduduk <br> Balita</a> </span>
+              <span class="info-box-text" style="white-space: nowrap;"> <a href="{{ route('adminbalita') }}" class="text-dark" rel="noopener noreferrer">Penduduk <br> Balita</a> </span>
             </div>
       
             <!-- /.info-box-content -->

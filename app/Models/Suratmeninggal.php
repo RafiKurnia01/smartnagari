@@ -17,6 +17,6 @@ class Suratmeninggal extends Model
 
     public function statussurat()
     {
-        return $this->belongsTo(Statussurat::class, 'id_status');
+        return $this->belongsTo(Statussurat::class, 'id_statussurat');
     }
 }

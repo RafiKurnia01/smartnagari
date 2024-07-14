@@ -353,7 +353,7 @@ background-color: #0081C9;
                             <!-- <h1 class="m-0 text-dark font-weight-bold">Dashboard</h1> -->
                             <div class="section-title position-relative m-0 font-weight-bold ">
 
-                                <h1 class="mt-2">Data Surat Kepengurusan</h1>
+                                <h1 class="mt-2">Data Kepengurusan</h1>
                             </div>
                         </div><!-- /.col -->
                         <div class="col-sm-6 mt-3">
@@ -379,19 +379,20 @@ background-color: #0081C9;
                             <div class="card " style="border-radius: 10px;">
                                 <div class="card-header d-flex justify-content-center"
                                     style="background-color: #ff0022; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                                    <h3 class="card-title  " style="color: #fff; ">Inputkan Data Kepengurusan</h3>
+                                    <h3 class="card-title  " style="color: #fff; ">Inputkan Pembaharuan Data Kepengurusan</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="{{ route('kepengurusanpost') }}" method="POST" >
+                                <form action="{{ route('updatepegawaistore') }}" method="POST" >
                                     @csrf
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">
+                                                <input type="hidden" id="id" name="id" value="@if($pegawai) {{ $pegawai->id }}@endif">
                                                 <div class="form-group">
                                                     <label for="namapegawai">Nama Pegawai </label>
                                                     <input type="text" class="form-control"
-                                                        style="background-color: #fff;" id="namapegawai" name="namapegawai"
+                                                        style="background-color: #fff;" id="namapegawai" name="namapegawai" value="@if($pegawai) {{ $pegawai->namapegawai }} @endif"
                                                         placeholder="Nama Pegawai" required>
                                                 </div>
                                                 <div class="form-group w-100">
@@ -418,7 +419,7 @@ background-color: #0081C9;
                                                 <div class="form-group">
                                                     <label for="NIP">NIP</label>
                                                     <input type="text" class="form-control"
-                                                        style="background-color: #fff;" id="nik" placeholder="NIP" name="NIP">
+                                                        style="background-color: #fff;" id="nik" placeholder="NIP" name="NIP" required value="@if($pegawai) {{ $pegawai->NIP }} @endif">
                                                 </div>
                                                
                                                 <div class="form-group">
@@ -432,7 +433,7 @@ background-color: #0081C9;
                                             <div class="col-md-12">
                                                 <label for="alamat">Alamat</label>
                                                 <input type="text" class="form-control"
-                                                    style="background-color: #fff;" id="alamat" name="alamat" placeholder="Alamat" >
+                                                    style="background-color: #fff;" id="alamat" name="alamat" placeholder="Alamat" required value="@if($pegawai) {{ $pegawai->alamat }} @endif">
                                             </div>
                                         </div>
                                     </div>

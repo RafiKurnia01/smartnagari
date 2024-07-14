@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -270,7 +270,7 @@ background-color: #0081C9;
 
                         <div class="media-body">
                             <h3 class="dropdown-item-title">Hallo</h3>
-                            <p style="font-size: small">Fatih</p>
+                            <p style="font-size: small">@if($admin) {{ $admin }}@endif</p>
                         </div>
                     </div>
                     <!-- Message End -->
@@ -287,7 +287,7 @@ background-color: #0081C9;
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light" style="color: #fff;">SMART NAGARI</span>
             </a>
@@ -298,60 +298,45 @@ background-color: #0081C9;
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                               with font-awesome or any other icon font library -->
+                             with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                            <a href="../../index.html" class="nav-link active">
-                                <i class="nav-icon fas fa-home"></i>
-                                <p style="color: #fff;">
-                                    Dashboard
-
-                                </p>
-                            </a>
-
+                          <a href="./index.html" class="nav-link active">
+                            <i class="nav-icon fas fa-home"></i>
+                            <p style="color: #fff;">
+                              Dashboard
+                            </p>
+                          </a>
+                         
                         </li>
-
+                       
                         <li class="nav-item has-treeview">
-                            <a href="../forms/data-produk.html" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
-                                <p style="color: #fff;">
-                                    Data Produk
-
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="../forms/data-penduduk.html" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p style="color: #fff;">
-                                    Data Penduduk
-
-                                </p>
-                            </a>
+                          <a href="{{ route('surat') }}" class="nav-link">
+                            <i class="nav-icon fas fa-edit"></i>
+                            <p style="color: #fff;">
+                              Pelayanan Surat
+                            
+                            </p>
+                          </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="../tables/settingan.html" class="nav-link">
-                                <i class="nav-icon fa fa-cog"></i>
-                                <p style="color: #fff;">
-                                    User
-
-                                </p>
-                            </a>
+                          <a href="{{ route('adminpegawai') }}" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p style="color: #fff;">
+                              Data Pegawai
+                            </p>
+                          </a>
                         </li>
-                        <li class="nav-item has-treeview das">
-                            <a href="./pages/tables/settingan.html" class="nav-link">
-                                <i class="nav-icon fa fa-sign-out-alt"></i>
-                                <p style="color: #fff;">
-                                    Log Out
-
-                                </p>
-                            </a>
-                        </li>
-
-
-                    </ul>
+                        <li class="nav-item has-treeview das" >
+                          <a href="{{ route('logout-admin') }}" class="nav-link">
+                            <i class="nav-icon fa fa-sign-out-alt"></i>
+                            <p style="color: #fff;">
+                              Log Out
+                            </p>
+                          </a>
+                        </li>         
+                      </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
@@ -376,7 +361,7 @@ background-color: #0081C9;
 
                                 <li class="breadcrumb-item"> <i class="nav-icon fas fa-home mr-2"
                                         style="color: #ff0022;"></i><a style="font-weight: bold;"
-                                        href="../../index.html">Home</a></li>
+                                        href="">Home</a></li>
                                 <li class="breadcrumb-item active">Data Program Kerja</li>
                             </ol>
                         </div><!-- /.col -->
@@ -394,58 +379,53 @@ background-color: #0081C9;
                             <div class="card " style="border-radius: 10px;">
                                 <div class="card-header d-flex justify-content-center"
                                     style="background-color: #ff0022; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                                    <h3 class="card-title  " style="color: #fff; ">Inputkan Data Program Kerja
-                                        Nikah</h3>
+                                    <h3 class="card-title  " style="color: #fff; ">Inputkan Data Program Kerja</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form role="form">
-                                
-                    
+                                <form role="form" action="{{ route('prokerpost') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf                                                  
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-10">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Nama Program </label>
-                                                    <input type="email" class="form-control"
-                                                        style="background-color: #fff;" id="nama"
-                                                        placeholder="Nama Produk">
+                                                    <label for="namaproker">Nama Program </label>
+                                                    <input type="text" class="form-control"
+                                                        style="background-color: #fff;" id="namaproker" name="namaproker"
+                                                        placeholder="Nama Program" required>
                                                 </div>
                                                
                                                 <div class="form-group w-100">
-                                                    <label for="categorySelect">Nama Pegawai Terlibat</label>
-                                                    <select class="form-control" style="background-color: #fff;" id="categorySelect">
+                                                    <label for="id_pegawai">Penanggung Jawab</label>
+                                                    <select class="form-control" style="background-color: #fff;" id="id_pegawai" name="id_pegawai" required>
                                                         <option value="" disabled selected>Pilih </option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
+                                                        @foreach ($pegawai as $p)
+                                                            <option value="{{ $p->id }}">{{ $p->namapegawai }}</option>
+                                                        @endforeach
                                                 
                                                         <!-- Add more categories as needed -->
                                                     </select>
                                                 </div>
                                                 <div class="form-group w-100">
-                                                    <label for="imageUpload">Gambar Proker</label>
-                                                    <input type="file" class="form-control" style="background-color: #fff;" id="imageUpload" accept="image/*">
+                                                    <label for="image">Gambar Proker</label>
+                                                    <input type="file" class="form-control" style="background-color: #fff;" id="image" name="image" accept="image/*" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="alasanMengurusSurat">Keterangan</label>
-                                                    <textarea class="form-control" style="background-color: #fff;" id="alasanMengurusSurat" placeholder="Detail Produk"
-                                                        rows="10" cols="50"></textarea>
+                                                    <label for="keterangan">Keterangan</label>
+                                                    <textarea class="form-control" style="background-color: #fff;" id="keterangan" name="keterangan" placeholder="Detail Produk"
+                                                        rows="10" cols="50" required></textarea>
                                                 </div>
-
-
-                                            </div>
-                                            
-
+                                            </div>                                         
+                                        </div>
+                                        <div class="box">
+                                            <button type="submit" class="btn btn-danger text-white"
+                                                style="background-color:#ff0022; border-radius: 9px; width: 100px;">Submit</button>
                                         </div>
                                     </div>
                                 </form>
 
 
 
-                                <div class="box">
-                                    <button class="btn btn-danger text-white"
-                                        style="background-color:#ff0022; border-radius: 9px; width: 100px;">Submit</button>
-                                </div>
 
 
                                 <!-- <div class="col-lg-4 tengah mx-auto  ">

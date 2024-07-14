@@ -54,4 +54,50 @@ class WebtanahController extends Controller
 
         return redirect()->route('services')->with('sukses', 'Surat berhasil diajukan');
     }
+
+    public function detail($id){
+        $user = Auth::guard('web')->user();
+        $admin = $user->nama;
+        $data = Surattanah::find($id);
+        return view('detail-tanah', compact('data', 'admin'));
+    }
+
+    public function update(Request $request){
+        $validation = $request->validate([
+            'id' => 'required|integer',
+            'status' => 'required|integer'
+        ]);
+
+        if(!$validation){
+            return redirect()->back()->with('gagal', 'Pastikan inputan anda sesuai');
+        }
+
+        $update = Surattanah::where('id', $request->id)->update([
+            'id_statussurat' => $request->status
+        ]);
+
+        if(!$update){
+            return redirect()->back()->with('gagal', 'Gagal mengubah status surat');
+        }
+
+        return redirect()->route('surat')->with('sukses', 'Status surat berhasil diubah');
+    }
+
+    public function delete(Request $request){
+        $validation = $request->validate([
+            'id' => 'required|integer'
+        ]);
+
+        if(!$validation){
+            return redirect()->back()->with('gagal', 'Pastikan inputan anda sesuai');
+        }
+
+        $delete = Surattanah::where('id', $request->id)->delete();
+
+        if(!$delete){
+            return redirect()->back()->with('gagal', 'Gagal menghapus surat');
+        }
+
+        return redirect()->route('surat')->with('sukses', 'Surat berhasil dihapus');
+    }
 }

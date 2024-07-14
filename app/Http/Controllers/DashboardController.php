@@ -16,7 +16,7 @@ class DashboardController extends Controller
     }
 
     public function dataWalinagari(){
-        $d = Walinagari::where('id' , 1)->get();
+        $d = Walinagari::where('id' , 2)->get();
         return view('walikota', compact('d'));
     }
 

@@ -17,8 +17,8 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if(!Auth::guard('web')->check()){
-            // return redirect()->route('login-admin')->with('gagal', 'Silahkan login terlebih dahulu');
-            return $next($request);
+            return redirect()->route('login-admin')->with('gagal', 'Silahkan login terlebih dahulu');
+            // return $next($request);
         }
 
         return $next($request);
