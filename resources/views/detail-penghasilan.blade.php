@@ -7,7 +7,6 @@
     <title>FORM</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
@@ -302,7 +301,7 @@ background-color: #0081C9;
                         <!-- Add icons to the links using the .nav-icon class
                              with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                          <a href="./index.html" class="nav-link active">
+                          <a href="{{ route('index-admin') }}" class="nav-link active">
                             <i class="nav-icon fas fa-home"></i>
                             <p style="color: #fff;">
                               Dashboard
@@ -353,7 +352,7 @@ background-color: #0081C9;
                             <!-- <h1 class="m-0 text-dark font-weight-bold">Dashboard</h1> -->
                             <div class="section-title position-relative m-0 font-weight-bold ">
 
-                                <h1 class="mt-2">Surat Keterangan kepemilikan Tanah</h1>
+                                <h1 class="mt-2">Surat Keterangan Penghasilan</h1>
                             </div>
                         </div><!-- /.col -->
                         <div class="col-sm-6 mt-3">

@@ -302,7 +302,7 @@ background-color: #0081C9;
                         <!-- Add icons to the links using the .nav-icon class
                              with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                          <a href="./index.html" class="nav-link active">
+                          <a href="{{ route('index-admin') }}" class="nav-link active">
                             <i class="nav-icon fas fa-home"></i>
                             <p style="color: #fff;">
                               Dashboard
